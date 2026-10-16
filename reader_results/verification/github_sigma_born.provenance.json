@@ -219,7 +219,7 @@
   },
   "sha256": {
     "../figures/github_sigma_born.png": "56b47c9779d4dbda9772a693c32ddd81ccc651aa7fb5ab48db5053edaa44d269",
-    "../make_results.py": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77"
+    "../make_results.py": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf"
   },
   "series_provenance": {
     "table": "../data/github_series.csv",

@@ -4,7 +4,7 @@
 
 已定位附录来源为大仓库 `matlab/vp_iterate/vp_smo_tot_err_0320.mat`。VP 中心值和误差均取该文件总误差样本的均值及样本标准差；与 ISR 的汇总方式不同。
 
-默认入口 `scripts/reproduce_vp.jl` 使用历史 ISR 随机截面，重新计算逆 ISR 因子，然后按
+默认入口 `scripts/reproduce_vp.jl` 使用历史 ISR 随机截面，重新计算ISR 修正因子，然后按
 
 $$
 R_{b,k}^{\mathrm{dressed}}(s)=\frac{s}{86.85}\sigma_{k}^{\mathrm{observed}}(s)(1+\delta_k)^{-1}
@@ -62,3 +62,9 @@ julia --project=. scripts/vp_convention_check.jl
 ```
 
 分别输出到 `results/vp/`、`results/vp_saved/`。默认完整链和保存输入路径均不需要连接外盘。保持包名 PaperISR，以兼容已有 ISR 调用；新增 API 为 VPKernel、vp_replay、vp_literal。
+
+## 截面单位换算常数核对
+
+[PDG 物理常数表](https://pdg.lbl.gov/2023/reviews/rpp2023-rev-phys-constants.pdf) 给出 $1\,\mathrm{GeV}^{-2}=0.3893793721\ldots\,\mathrm{mb}=389379372.1\ldots\,\mathrm{pb}$。因此旧代码的 $389379000$ 是正确的舍入值，$380379000$ 不是另一种单位约定，而是约低 $2.31\%$ 的错误值。
+
+更新实现 `src/updated.jl` 使用共同常数 `UPDATE_CONV=389379000.0`，两 pion 截面与参考缪子截面均使用它；换成 nb 时再除以 $1000$。这个舍入值与上述 PDG 值的相对差约为 $9.56\times10^{-7}$（约 $0.96$ ppm）。历史复现实现仍保留原始两 pion 常数，以保证重放一致。$2.31\%$ 指受影响换算项的相对偏差，并不是总 VP 因子的相对偏差。

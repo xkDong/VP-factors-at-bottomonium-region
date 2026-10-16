@@ -41,9 +41,9 @@ $$\sigma_{\rm dressed}=R_{\rm dressed}\,\sigma_{\mu\mu}^{\rm ref},\qquad
 
 换算严格沿用各分支约定：旧版 $\sigma_{\mu\mu}^{\rm ref}=86.85/s\;\mathrm{nb}$；新版使用代码中的 $\alpha=1/137.035999074$、$m_\mu=0.105658\,\mathrm{GeV}$ 和换算常数计算带缪子质量修正的参考截面，具体数值已逐点附在 `sigma_mumu_reference_nb` 列。换算常数的不确定度未额外传播。
 
-旧版表来自保存并经过 ISR 重放验证的 dressed $R_b$ 样本，定义为历史逆 ISR 因子乘回原始输入后的谱，**尚未进行 VP 阶段第二次光滑**；均值与标准差按历史规则包含全部 10000 项。新版表同样来自原始实验截面乘以新版逆 ISR 因子，误差统计排除首个名义样本，使用 9999 项。旧版该表的均值是总输入误差抽样均值，不是旧 ISR 因子表的统计误差抽样均值。误差由逐样本 dressed 结果计算，未将输入误差与 ISR 因子误差当作独立误差相加。
+旧版表来自保存并经过 ISR 重放验证的 dressed $R_b$ 样本，定义为历史ISR 修正因子乘回原始输入后的谱，**尚未进行 VP 阶段第二次光滑**；均值与标准差按历史规则包含全部 10000 项。新版表同样来自原始实验截面乘以新版ISR 修正因子，误差统计排除首个名义样本，使用 9999 项。旧版该表的均值是总输入误差抽样均值，不是旧 ISR 因子表的统计误差抽样均值。误差由逐样本 dressed 结果计算，未将输入误差与 ISR 因子误差当作独立误差相加。
 
-The ISR column is the **inverse** ISR factor:
+The ISR column is the ISR correction factor:
 
 $$C_{\rm ISR}=\frac{1}{1+\delta}=\frac{\sigma_{\rm dressed}^{\rm solver}}{\sigma_{\rm observed,smoothed}},\qquad \sigma_{\rm dressed}^{\rm reported}=\sigma_{\rm obs,raw}C_{\rm ISR}.$$
 

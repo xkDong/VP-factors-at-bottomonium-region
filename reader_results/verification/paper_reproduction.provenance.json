@@ -218,7 +218,7 @@
     }
   },
   "sha256": {
-    "../figures/paper_reproduction.png": "9f321d880417ec254ee5f277781e67e6325d8a83f2ac2724160d95c15a53b654",
-    "../make_results.py": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77"
+    "../figures/paper_reproduction.png": "fa6e1451dffbdb79c4715692237e16a7ef878d4dcea13b0306c1d5de258c66a5",
+    "../make_results.py": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf"
   }
 }

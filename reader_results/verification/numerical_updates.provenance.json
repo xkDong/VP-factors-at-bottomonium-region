@@ -218,7 +218,7 @@
     }
   },
   "sha256": {
-    "../figures/numerical_updates.png": "3f5e5260c5f0353d02773abecb05632eefc291151fb04b9c5c7819d1df83aceb",
-    "../make_results.py": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77"
+    "../figures/numerical_updates.png": "ea0ac194e2b076c69db850c2e658240cd03fd6baecc91f330f68bc8d5fcfa9b4",
+    "../make_results.py": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf"
   }
 }

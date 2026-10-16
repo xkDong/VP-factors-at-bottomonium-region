@@ -1,6 +1,6 @@
 # PaperISR.jl: paper reproduction and numerical updates
 
-A standalone Julia package for reproducing the inverse initial-state radiation (ISR) and vacuum-polarization (VP) factors in the appendix of [arXiv:2002.09838](https://arxiv.org/abs/2002.09838), with a separate implementation of numerical corrections and uncertainty propagation.
+A standalone Julia package for reproducing the initial-state radiation (ISR) and vacuum-polarization (VP) correction factors in the appendix of [arXiv:2002.09838](https://arxiv.org/abs/2002.09838), with a separate implementation of numerical corrections and uncertainty propagation.
 
 **Use the results directly:** the [reader results package](reader_results/README.md) contains CSV tables for all 209 measured energies, PNG and vector PDF figures, updated covariance matrices, and reading examples. It can be distributed independently. Reading the tables or regenerating the figures does not require the original repository or an external drive.
 
@@ -8,17 +8,17 @@ A standalone Julia package for reproducing the inverse initial-state radiation (
 
 Blue dashed curves show the paper-reproduction version; orange solid curves show the numerical updates. All four figures compare **results evaluated at nominal inputs**. The lower panels show $100(X_{\rm new}/X_{\rm old}-1)\%$. Lines connect the 209 measured energies to guide the eye; they are not additional fits to a continuous spectrum. The ensemble means used for the published centers are provided separately in the CSV files. See the [detailed change notes](reader_results/CHANGES.md).
 
-### Inverse ISR correction
+### ISR correction factor
 
 The plotted quantity is $C_{\rm ISR}=1/(1+\delta)$. The nominal results largely overlap, with the largest differences at low energies. The maximum relative change is approximately 0.618%.
 
-![Comparison of inverse ISR factors](reader_results/figures/github_isr.png)
+![Comparison of ISR correction factors](reader_results/figures/github_isr.png)
 
 [Point-by-point data](reader_results/data/comparison_isr.csv) · [Vector PDF](reader_results/figures/github_isr.pdf)
 
 ### Dressed cross section
 
-Cross sections are in nb. Both versions multiply the original, unsmoothed experimental cross section by their respective inverse ISR factors. Smoothing is used to determine the correction factors; it does not replace the experimental data in the reported cross sections.
+Cross sections are in nb. Both versions multiply the original, unsmoothed experimental cross section by their respective ISR correction factors. Smoothing is used to determine the correction factors; it does not replace the experimental data in the reported cross sections.
 
 ![Comparison of dressed cross sections](reader_results/figures/github_sigma_dressed.png)
 
@@ -45,6 +45,8 @@ Each shaded band spans one **propagated input standard deviation** above and bel
 - `paper-reproduction`: preserves the historical calculation matching the paper appendix, starting at commit `5cabb61`.
 - `numerical-updates`: provides corrected formula implementations and unit conversions, direct ISR inversion with residual checks, converged VP iteration, a single configurable smoothing stage, and paired covariance propagation.
 
+The cross-section conversion uses $1\,\mathrm{GeV}^{-2}\simeq389379000\,\mathrm{pb}$ consistently in the updated pion and muon terms; the historical pion value $380379000$ is retained only for reproduction. See the [unit-conversion check](docs/vp_reproduction.md#截面单位换算常数核对).
+
 The updated implementation is in `src/updated.jl`; historical interfaces retain their original behavior. Run the following from the repository root:
 
 ```sh
@@ -61,7 +63,7 @@ The dressed/Born columns in `results/updates/` preserve the earlier audit of the
 
 ## Historical reproduction
 
-The historical workflow follows the original MATLAB implementation and reproduces the appendix inverse ISR and VP factors and their uncertainties.
+The historical workflow follows the original MATLAB implementation and reproduces the appendix ISR and VP correction factors and their uncertainties.
 
 **Validation:** all 209 appendix points pass the historical ISR and VP comparisons. The historical test suite passed 25 tests; the expanded updated suite passed 45 tests. The full ISR → dressed $R_b$ → VP chain has been replayed. Reported dressed/Born cross sections and paired uncertainties are also available. Resonance fitting has not undergone end-to-end validation.
 
@@ -100,7 +102,7 @@ ISR outputs are written to `results/historical/` and `results/fresh/`. VP output
 
 The historical energy grid starts at the threshold $10.55852\,\mathrm{GeV}$, with the cross-section conversion $\sigma=86.85R/s$ in nb. Ordinary LOWESS smoothing starts at point 23, corresponding to $10.6659\,\mathrm{GeV}$, with span fraction 0.045 and no robust reweighting. ISR smoothing is applied at initialization. The historical ISR calculation interpolates in $s=E^2$, integrates segments analytically, and solves sequentially in energy using 30 stored states, or 29 updates. The historical VP stage retains its separate smoothing convention.
 
-For ISR, appendix centers are the inverse-factor means from statistical-input samples, while uncertainties are sample standard deviations from total-input-error samples. VP centers and uncertainties use the historical total-input ensemble. Nominal-input results and ensemble means are distinct. The audit compares different ISR iteration counts rather than assuming that the historical choice is converged.
+For ISR, appendix centers are the ISR-correction-factor means from statistical-input samples, while uncertainties are sample standard deviations from total-input-error samples. VP centers and uncertainties use the historical total-input ensemble. Nominal-input results and ensemble means are distinct. The audit compares different ISR iteration counts rather than assuming that the historical choice is converged.
 
 ## One-time input extraction and provenance
 

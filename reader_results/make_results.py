@@ -133,7 +133,7 @@ for version,data,color in [('paper_reproduction',old,blue),('numerical_updates',
         center=vals[1] if version=='paper_reproduction' else vals[0]
         centerlabel=('Stat-toy mean' if k=='isr' else 'Total-toy mean') if version=='paper_reproduction' else 'Nominal'
         axes[0,j].errorbar(e,center,yerr=vals[2],fmt='.',ms=3,elinewidth=.6,c=color,label=centerlabel+' ± input SD')
-        axes[0,j].set(title=f'{k.upper()} factor',ylabel='Inverse ISR factor' if k=='isr' else 'VP factor');axes[0,j].legend()
+        axes[0,j].set(title=f'{k.upper()} factor',ylabel='ISR correction factor' if k=='isr' else 'VP factor');axes[0,j].legend()
         scatter(axes[1,j],vals[2],'Input SD',color)
         axes[1,j].set(title=f'{k.upper()} input uncertainty',ylabel='Factor standard deviation')
         quantities.append(f'{version}_{k}_display_center')
@@ -155,7 +155,7 @@ for key,old_y,new_y,old_sd,new_sd,label in main_specs:
         fingerprints[sid]={'fingerprint':fp,'metadata':metadata}
         series_rows += [(sid,fp,float(x),float(v),float(u)) for x,v,u in zip(e,y,sd)]
 with (ROOT/'data/github_series.csv').open('w',newline='') as f:
-    w=csv.writer(f);w.writerow(['series_id','evaluator_fingerprint','energy_GeV','nominal','input_sd']);w.writerows(series_rows)
+    w=csv.writer(f,lineterminator="\n");w.writerow(['series_id','evaluator_fingerprint','energy_GeV','nominal','input_sd']);w.writerows(series_rows)
 for sid,info in fingerprints.items():
     assert len({r[1] for r in series_rows if r[0]==sid})==1
 (ROOT/'verification/github_fingerprints.json').write_text(json.dumps(fingerprints,indent=2)+'\n')

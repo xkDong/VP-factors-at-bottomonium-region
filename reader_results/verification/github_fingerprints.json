@@ -1,6 +1,6 @@
 {
   "isr_paper_reproduction": {
-    "fingerprint": "a4f1361720f2ea2f5e875d6aa78e3586e62fb2e8616feb7656bb69b106410f02",
+    "fingerprint": "1b7894c64b61429bca7f4a129085472e6a6ba0b8b122a823cc2d44b9aaaf61cc",
     "metadata": {
       "version": "paper_reproduction",
       "quantity": "isr",
@@ -132,14 +132,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "isr_numerical_updates": {
-    "fingerprint": "0134dc4a25bbc303646198370e704739f89e685243ccfaf99e6f2d73ccfc630d",
+    "fingerprint": "ea98f88370ef2d6848d45dc6efea21a4fefb622ce0d972e11a7e2d395fa609d6",
     "metadata": {
       "version": "numerical_updates",
       "quantity": "isr",
@@ -271,14 +271,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "sigma_dressed_paper_reproduction": {
-    "fingerprint": "3a7722136b7da52d298a474229fb787b5e53548d084f29b2edbb69fd7572f6ac",
+    "fingerprint": "7bb5be49e339b26a6f777041cd50c95b07fe3d1c749a09ae55c6f1598f044b26",
     "metadata": {
       "version": "paper_reproduction",
       "quantity": "sigma_dressed",
@@ -410,14 +410,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "sigma_dressed_numerical_updates": {
-    "fingerprint": "5710cf1430c04da9de710d69232ef4c569dea0e58284b77aa225dc42330416b3",
+    "fingerprint": "cdc39d7d50a7284cebb7f6cf18be942d10c5ad4460f54e39b663ccc4ca2e6cc4",
     "metadata": {
       "version": "numerical_updates",
       "quantity": "sigma_dressed",
@@ -549,14 +549,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "sigma_born_paper_reproduction": {
-    "fingerprint": "7379e5ac25196f38249ba6346401c795929f307a21ddf4d6b4cc5ad699c3a06c",
+    "fingerprint": "d7ca2d4919933dc1802d9fc2c7041f37dd6f6e1b1e25c21532dc25208e307d92",
     "metadata": {
       "version": "paper_reproduction",
       "quantity": "sigma_born",
@@ -688,14 +688,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "sigma_born_numerical_updates": {
-    "fingerprint": "9e35ea600fc492eac58f4cbf92f09f6d28a3ce7a5529f6b60901083bb715cd3b",
+    "fingerprint": "b0d07c60fc600cd762d4238eb4168c1d20747e4ed7f5faeac206a9d139099158",
     "metadata": {
       "version": "numerical_updates",
       "quantity": "sigma_born",
@@ -827,14 +827,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "vp_paper_reproduction": {
-    "fingerprint": "464a9289b699551acd4622c6d54ec309e91e2c1b9c6a5b97be53edfd58d3466b",
+    "fingerprint": "afd0435f1ec8986960583dda878bd7fd81590088881b70721db47e2ce9a573b8",
     "metadata": {
       "version": "paper_reproduction",
       "quantity": "vp",
@@ -966,14 +966,14 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
     }
   },
   "vp_numerical_updates": {
-    "fingerprint": "01948a8d31d36917c1e898febcce2f2ef3f60c3a2272962072fb05bce467fc4f",
+    "fingerprint": "84bc014fa9d17943a581fa8e1c0b9fece346e86c6dac4ccbcc8810e1a07f6add",
     "metadata": {
       "version": "numerical_updates",
       "quantity": "vp",
@@ -1105,7 +1105,7 @@
           "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
         }
       },
-      "transform_sha256": "a5e7e2a9d962b85a674b51c1493292d1249e878a949b22df22dfa01ff588ad77",
+      "transform_sha256": "593bd1f7fbe71be5f7d368b9004679ff885ac30654ab51718a2f54c2dbf391cf",
       "center": "nominal",
       "uncertainty": "sample SD of historical input ensemble; old 10000, new 9999",
       "connection": "straight segments at measured energies, no new evaluator or fit"
