@@ -1,0 +1,43 @@
+vp_bottom_stat_above_all_input_max_gaussian_mc_z = -76.2833881479925
+scope = "Given historical input uncertainty model and declared single-smoothing signed linear estimator"
+negative_draws_policy = "Retain signed estimates; no clipping, dropping, or Gaussian-prior positivity claim"
+not_included = "Smoothing model bias, pQCD/model/parameter uncertainty, newly inferred experimental correlations"
+max_independent_error_approximation_difference_percent = 0.5259869116569948
+passed = true
+max_nominal_vp_change_vs_appendix_percent = 0.16456313143128343
+nominal_vp_resolution_budget_abs = 5.159346370131601e-7
+nominal_positive = true
+resolution_target_abs = 1.0e-6
+
+[input_hashes]
+"data/vp/stat_provenance.json" = "0ef4b9f121b0bca4bb1cb4ecc46dc994fc232b5171c4f3e708c30165f5c8f050"
+"data/total_draws.f64" = "de42bcc3b0183ca20c3de2e0e9380baa00e6d4ca828083565e805ee66e470dfe"
+"data/stat_draws.f64" = "7ffd8450a808f6b4d213f833d0dd3e8b8c6acbebf70bfec6e777273045b37b8f"
+"data/vp/Rbes.f64" = "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+"data/vp/Rpdg.f64" = "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"
+
+[settings]
+historical_toys = 10000
+isr_order = 48
+second_smoothing = false
+vp_rtol = 1.0e-11
+uncertainty_samples = 9999
+isr_smoothing_start_GeV = 10.6659
+vp_tail_step_GeV = 0.125
+vp_upper_GeV = 200.0
+vp_refinement = 20
+span = 0.045
+vp_background_refinement = 2
+
+[covariance_eigenvalue_minima]
+born = 9.208361866133066e-15
+vp = 8.619932407965965e-21
+isr = -2.414111339530369e-19
+dressed = 1.9362800663577967e-16
+born_stat = 4.435586758316021e-15
+
+[evidence_hashes]
+"validation.toml" = "e98317180937bfcce7ddea20e8818f6cd10a4e5b25aad365cbe1ea5b380e6b81"
+"grid_convergence.csv" = "8992defa257c863d4475e0ae2e644bccc495a6a0358b18cd8a3e4157a3eafcf4"
+"comparison.csv" = "f8f9904f26d90be299c7ffc6520f6aae47fb3245ec5edabe503c0d9c802f3783"
+"independent_methods.toml" = "d641cd4165626b8830638c5d7929cc3b2b905d208ace8d6591e454cabf034158"

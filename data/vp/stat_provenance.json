@@ -1,0 +1,22 @@
+{
+  "source": "/Volumes/Seagate_xkDong/Academic/works/VP_B/matlab/vp_iterate/inputR_for_MC_sta_err_0320.mat",
+  "source_sha256": "f20311960eca4fe7aeb6141aad2499d3efecc1d7b0a85430c79437c36f5ca8e7",
+  "arrays": {
+    "Rpdg": {
+      "identical_to_total": true,
+      "shape": [
+        10000,
+        663
+      ],
+      "sha256": "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"
+    },
+    "Rbes": {
+      "identical_to_total": true,
+      "shape": [
+        10000,
+        117
+      ],
+      "sha256": "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+    }
+  }
+}

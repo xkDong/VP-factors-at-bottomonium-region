@@ -1,0 +1,8 @@
+{
+  "julia": "1.12.6",
+  "passed": 45,
+  "failed": 0,
+  "historical_isr_full_replay_passed": true,
+  "historical_vp_full_replay_passed": true,
+  "update_gate": "acceptance.toml"
+}

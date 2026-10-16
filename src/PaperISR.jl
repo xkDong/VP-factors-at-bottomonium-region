@@ -151,4 +151,5 @@ function ensemble_summary(a)
     mu,sd
 end
 include("vp.jl")
+include("updated.jl")
 end

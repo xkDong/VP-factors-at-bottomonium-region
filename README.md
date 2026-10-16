@@ -1,4 +1,17 @@
-# PaperISR.jl：ISR 与 VP 复现
+# PaperISR.jl：论文复现与数值更新
+
+当前为 numerical-updates 分支。paper-reproduction 分支固定保存逐点对齐论文附录的历史重放，初始提交为 5cabb61。
+
+更新实现修复明确的公式和单位错误，采用带残差检查的 ISR 线性反演、VP 收敛求解、一次按能量阈值配置的平滑以及逐样本协方差传播。新接口位于 src/updated.jl，历史接口不变。
+
+    julia --project=. test/runtests.jl
+    julia --project=. scripts/audit_updates.jl
+    julia --project=. scripts/check_updated_methods.jl
+    julia --project=. scripts/validate_updates.jl
+
+更新结果在 results/updates/；最终采用范围以 acceptance.toml 为准。负的反演估计值未截零，平滑及 pQCD 等模型误差不包含在输入误差协方差内。详见 [更新检查报告](docs/numerical_updates.md)。
+
+## 历史复现入口
 
 独立 Julia 包，按大仓库 MATLAB 实现重算 [arXiv:2002.09838](https://arxiv.org/abs/2002.09838) 最终附录的逆 ISR、VP 因子及其误差。
 

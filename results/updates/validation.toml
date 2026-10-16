@@ -1,0 +1,24 @@
+vp_residual = 1.6231460620019789e-13
+background_refinement_1_max_abs = 4.559655342184499e-7
+isr_condition_number = 2.429020522104474
+scientific_status = "provisional until resolution and negative-draw audits are assessed"
+background_refinement_4_max_abs = 1.0172223507964873e-7
+isr_residual_nb = 4.440892098500626e-16
+vp_bottom_stat_variance_above_total_count = 0
+vp_iterations = 7
+vp_tolerance_check = 4.440892098500626e-16
+background_error_model = "Stored low/charm combined-error ensembles; no justified statistical/systematic split"
+negative_dressed_values = 773
+tailfine_max_vp_abs = 1.0784118753548455e-7
+tail100_max_vp_abs = 1.6554637816135198e-7
+completed = true
+nominal_min_dressed_R = 0.04830825639963325
+tail400_max_vp_abs = 3.397074022082336e-8
+isr_quadrature48_96_max_abs = 1.1102230246251565e-15
+n_toys = 10000
+tailcoarse_max_vp_abs = 4.312555585972433e-7
+minimum_dressed_R = -0.07427701190999408
+
+[hashes]
+"scripts/audit_updates.jl" = "cb55483c717c126e30f3bb26611bd22f69437efbe09ee4f3626a05b6466ff4f8"
+"src/updated.jl" = "950b1190e357d1a2c6974a4fe2ed519107ade46bc98d4cf45213a9f80285943f"

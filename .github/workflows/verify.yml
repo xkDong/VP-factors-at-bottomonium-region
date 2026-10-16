@@ -11,3 +11,6 @@ jobs:
       - run: julia --project=. test/runtests.jl
       - run: julia --project=. --threads=2 scripts/reproduce.jl historical
       - run: julia --project=. --threads=2 scripts/reproduce_vp.jl
+      - run: julia --project=. scripts/audit_updates.jl
+      - run: julia --project=. scripts/check_updated_methods.jl
+      - run: julia --project=. scripts/validate_updates.jl
