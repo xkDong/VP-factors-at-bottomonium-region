@@ -1,0 +1,46 @@
+{
+  "source_directory": "/Volumes/Seagate_xkDong/Academic/works/VP_B/R_b/matlab/codes1",
+  "arrays": {
+    "data/stat_draws.f64": {
+      "shape_in_file": [
+        10000,
+        210
+      ],
+      "encoding": "little-endian Float64, toy-major: all energies of toy 1, then toy 2",
+      "sha256": "7ffd8450a808f6b4d213f833d0dd3e8b8c6acbebf70bfec6e777273045b37b8f"
+    },
+    "reference/stat_forward_factors.f64": {
+      "shape_in_file": [
+        10000,
+        210
+      ],
+      "encoding": "little-endian Float64, toy-major: all energies of toy 1, then toy 2",
+      "sha256": "4a87062d049e5d7bd0c4786559b25a063a8c7d91c31d5c9beb246587a917146d"
+    },
+    "data/total_draws.f64": {
+      "shape_in_file": [
+        10000,
+        210
+      ],
+      "encoding": "little-endian Float64, toy-major: all energies of toy 1, then toy 2",
+      "sha256": "de42bcc3b0183ca20c3de2e0e9380baa00e6d4ca828083565e805ee66e470dfe"
+    },
+    "reference/total_forward_factors.f64": {
+      "shape_in_file": [
+        10000,
+        210
+      ],
+      "encoding": "little-endian Float64, toy-major: all energies of toy 1, then toy 2",
+      "sha256": "d530fd251bda4a9512674a8cf9b3b383ee942bd907f5a0d4a3736432f57ba19c"
+    }
+  },
+  "source_files": {
+    "ISR_factor_sta_err.mat": "fbe729f4d66c81cd349cee6c7abaaf8cddd8bbd95de293a79492788406754580",
+    "ISR_factor_total_err.mat": "99673fb08e8bc3adfe1dfc3c2b72b2cdc3ceb46ccee8d8cb6348bcb1d5b696f4",
+    "ISR_staerr.m": "bf1820dde83e6770c88e90d5ca45aa300fef120323c1be5edf85a2d240d033ce",
+    "ISRcalculation.m": "c77e145943426445ce2f55b68862f5be6a1552fffc1174fd07c85df7a1fb1627",
+    "iteration.m": "282e2b2b11d3d7c879665652cc5c17cad42140cdb77e8609d72b9f213dcea33f",
+    "g1.m": "4aef73b5be8e6634dc658c2e1adcb0bd90896b952ea580e5eae95214bece5296",
+    "Newsigma.m": "43f6a16535fd67c846731b99fcb7c1a2aa5c43b64905e0a462bc83ecff3d2014"
+  }
+}

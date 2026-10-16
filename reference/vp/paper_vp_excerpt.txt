@@ -1,0 +1,45 @@
+Source: arXiv:2002.09838, archived main.tex, lines 300-343
+from the hadronic loops. This quantity $\Pi_h(s)$ is related to
+the total cross section $\sigma (s)$ of $\EE \to {\rm hadrons}$
+in the one-photon exchange approximation through a dispersion
+relation
+ \beq
+\Pi_h(s)= \frac{s}{4\pi^2 \alpha} \int_{4m^2_{\pi}}^{\infty}
+\frac{\sigma (s^{\prime})}{s-s^{\prime}+i\epsilon } d s^{\prime}~.
+\label{dspnrelationa}
+ \eeq
+Using the identity
+$$\frac{1}{x+i\epsilon} = P\frac{1}{x}-i\pi \delta(x)~, $$
+we have
+ \beq
+\Pi_h(s)=- \frac{s}{4\pi^2 \alpha} P \int_{4m^2_{\pi}}^{\infty}
+\frac{\sigma (s^{\prime})}{s^{\prime}-s} d s^{\prime} - i
+\frac{s}{4\pi \alpha} \sigma(s)~. \label{dspnrelationb}
+ \eeq
+
+We follow the procedure in Ref.~\cite{Berends_vp} to calculate 
+the first term in the above equation. First, the integration 
+is performed analytically for
+narrow resonances $\jpsi$, $\psip$, $\Upsilon(1S)$,
+$\Upsilon(2S)$, and $\Upsilon(3S)$. Second, for the high energy
+part, it is assumed that $R(s)=R(s_1)$ is a constant above a
+certain value $s_1$. And third, the integral between threshold and
+$s_1$ is carried out numerically after separation of the principle
+value part. Thus we have
+\begin{align}
+\Re~ \Pi_h(s)=& \frac{3s}{\alpha} \sum\limits_{j}
+\frac{\Gamma^j_{\EE}}{M_j}\frac{s -M_j^2}{(s -M_j^2)^2 + M_j^2 \Gamma_j^2}
++\frac{\alpha}{3\pi} R(s_1)\ln\left|\frac{s-s_1}{s_1}\right|\notag\\
+&- \frac{s}{4\pi^2 \alpha}
+ \int_{4m^2_{\pi}}^{s_1} \frac{\sigma_{\rm nr} (s^{\prime})-\sigma_{\rm nr} (s)}
+ {s^{\prime}-s}\mathrm{d} s^{\prime} -\frac{s\sigma_{\rm nr} (s)}{4\pi^2 \alpha}
+ \ln \left|\frac{s_1-s}{4m^2_{\pi}-s}\right| ,\label{eq:piexpressiona}
+\end{align}
+where $\Gamma_j$, $\Gamma^j_{\EE}$, and $M_j$ denote total width,
+partial width to $\EE$ pair, and mass of the resonance $j$,
+respectively. Here, $\sigma_{\rm nr} (s)$ is the $\sigma (s)$ 
+in~\Eq{dspnrelationb} with the contributions from narrow
+resonances subtracted.
+
+We use experimental measurements or theoretical calculations of
+$R$ values in different energy regions in the calculation of the

@@ -1,0 +1,13 @@
+name: Verify ISR reproduction
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.12'
+      - run: julia --project=. test/runtests.jl
+      - run: julia --project=. --threads=2 scripts/reproduce.jl historical
+      - run: julia --project=. --threads=2 scripts/reproduce_vp.jl

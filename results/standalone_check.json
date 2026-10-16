@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "julia": "1.12.6",
+  "isolated_copy": true,
+  "initially_empty_depot": true,
+  "runs": [
+    [
+      "test/runtests.jl"
+    ],
+    [
+      "scripts/reproduce.jl",
+      "historical"
+    ],
+    [
+      "scripts/reproduce.jl",
+      "fresh",
+      "10000",
+      "2020"
+    ],
+    [
+      "scripts/reproduce_vp.jl",
+      "saved"
+    ],
+    [
+      "scripts/reproduce_vp.jl"
+    ],
+    [
+      "scripts/vp_convention_check.jl"
+    ]
+  ],
+  "tests_passed": 25
+}

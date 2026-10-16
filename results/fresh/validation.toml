@@ -1,0 +1,21 @@
+mode = "fresh"
+total_toys = 10000
+states = 30
+total_literal_max_abs = 8.733014311701481e-12
+appendix_mean_max_abs = 0.003539937431710105
+julia_version = "1.12.6"
+stat_30_to_60_max_abs = 0.0016710200519172713
+threads = 4
+total_30_to_60_max_abs = 0.0016710200519172713
+completed = true
+appendix_error_max_abs = 0.0020134007951996824
+stat_literal_max_abs = 8.733014311701481e-12
+stat_toys = 10000
+seed = 2020
+
+[hashes]
+"reference/cpc.csv" = "557742965c3c286aa3bfd57c773c92065606a67e21c2ac2cd7bee7f6082fdfa4"
+"src/PaperISR.jl" = "22390426aa45d21f01c42b43fadc5840e0d02f91b5fceefa20ecf4641472292b"
+"scripts/reproduce.jl" = "67a75ea1f58e80ec10b26f6c39b37278a4703c715a02aef3048d3ee8900f1e8a"
+"data/stat_input.csv" = "0da7132f8f7ce4f304ed7945b3513823582ed51add035522f2cf624ceb4b3411"
+"data/total_input.csv" = "eaf18273f22a2c9f347d7bf5b87bafad471c2912b5c0e162bc6f765e15939e5d"
