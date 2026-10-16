@@ -1,81 +1,88 @@
-# PaperISR.jl：论文复现与数值更新
+# PaperISR.jl: paper reproduction and numerical updates
 
-**直接使用结果：** [读者结果包](reader_results/README.md) 整理了新旧版本全部 209 个能点的 ISR、VP 因子及误差 CSV、PNG/PDF 图、新版协方差矩阵和读取示例。该目录可独立分发，读取结果或重画图无需外接硬盘和旧仓库。
+A standalone Julia package for reproducing the inverse initial-state radiation (ISR) and vacuum-polarization (VP) factors in the appendix of [arXiv:2002.09838](https://arxiv.org/abs/2002.09838), with a separate implementation of numerical corrections and uncertainty propagation.
 
-## 主要结果：新旧版本对比
+**Use the results directly:** the [reader results package](reader_results/README.md) contains CSV tables for all 209 measured energies, PNG and vector PDF figures, updated covariance matrices, and reading examples. It can be distributed independently. Reading the tables or regenerating the figures does not require the original repository or an external drive.
 
-蓝色虚线为文章复现版本，橙色实线为数值更新版本。四张图均比较相同定义的**名义输入结果**；下方小图为 $100(X_{\rm new}/X_{\rm old}-1)\%$。曲线连接 209 个测量能点以方便阅读，不代表额外的连续谱拟合。论文采用的抽样均值另存于 CSV，详见 [更新说明](reader_results/CHANGES.md)。
+## Main results: comparison of the two versions
 
-### ISR 修正因子
+Blue dashed curves show the paper-reproduction version; orange solid curves show the numerical updates. All four figures compare **results evaluated at nominal inputs**. The lower panels show $100(X_{\rm new}/X_{\rm old}-1)\%$. Lines connect the 209 measured energies to guide the eye; they are not additional fits to a continuous spectrum. The ensemble means used for the published centers are provided separately in the CSV files. See the [detailed change notes](reader_results/CHANGES.md).
 
-展示逆 ISR 因子 $C_{\rm ISR}=1/(1+\delta)$。两版名义值大部分重合，主要差别在低能点；最大相对变化约为 0.618%。
+### Inverse ISR correction
 
-![新旧版本逆 ISR 因子对比](reader_results/figures/github_isr.png)
+The plotted quantity is $C_{\rm ISR}=1/(1+\delta)$. The nominal results largely overlap, with the largest differences at low energies. The maximum relative change is approximately 0.618%.
 
-[逐点数据](reader_results/data/comparison_isr.csv) · [矢量 PDF](reader_results/figures/github_isr.pdf)
+![Comparison of inverse ISR factors](reader_results/figures/github_isr.png)
 
-### Dressed 截面
+[Point-by-point data](reader_results/data/comparison_isr.csv) · [Vector PDF](reader_results/figures/github_isr.pdf)
 
-截面单位为 nb。两版均用光滑前的原始实验截面乘以各自逆 ISR 因子；光滑谱仅用于求解修正因子，不替代最终报告的实验数据。
+### Dressed cross section
 
-![新旧版本 dressed 截面对比](reader_results/figures/github_sigma_dressed.png)
+Cross sections are in nb. Both versions multiply the original, unsmoothed experimental cross section by their respective inverse ISR factors. Smoothing is used to determine the correction factors; it does not replace the experimental data in the reported cross sections.
 
-[逐点数据](reader_results/data/comparison_sigma_dressed_nb.csv) · [矢量 PDF](reader_results/figures/github_sigma_dressed.pdf)
+![Comparison of dressed cross sections](reader_results/figures/github_sigma_dressed.png)
 
-### Born 截面
+[Point-by-point data](reader_results/data/comparison_sigma_dressed_nb.csv) · [Vector PDF](reader_results/figures/github_sigma_dressed.pdf)
 
-两版均按 $\sigma_{\rm Born}=\sigma_{\rm obs}^{\rm raw}C_{\rm ISR}/F_{\rm VP}$ 计算，单位为 nb。均值和误差来自逐样本比值，保留原始输入、ISR 与 VP 的相关性；旧版 Born 是由已验证的历史样本推导的结果，尚未与原论文独立的 Born 表逐点核对。
+### Born cross section
 
-![新旧版本 Born 截面对比](reader_results/figures/github_sigma_born.png)
+Both versions use $\sigma_{\rm Born}=\sigma_{\rm obs}^{\rm raw}C_{\rm ISR}/F_{\rm VP}$, in nb. Ensemble means and uncertainties are calculated from paired sample ratios, preserving correlations between the experimental input, ISR and VP. The historical Born table is derived from the validated historical samples; it has not been independently matched to a published Born table.
 
-[逐点数据](reader_results/data/comparison_sigma_born_nb.csv) · [矢量 PDF](reader_results/figures/github_sigma_born.pdf)
+![Comparison of Born cross sections](reader_results/figures/github_sigma_born.png)
 
-### VP 因子与误差带
+[Point-by-point data](reader_results/data/comparison_sigma_born_nb.csv) · [Vector PDF](reader_results/figures/github_sigma_born.pdf)
 
-阴影分别表示各版名义中心值上下一个**输入误差传播标准差**。旧版标准差包含 10000 项，新版排除首个名义样本，使用 9999 个随机样本。误差带不包含光滑、pQCD 等额外模型不确定度，也不是均值的蒙特卡洛标准误。两版输入相关，误差带重叠程度不能直接用于独立测量的显著性判断。
+### VP factor with uncertainty bands
 
-![新旧版本 VP 因子及输入误差带](reader_results/figures/github_vp.png)
+Each shaded band spans one **propagated input standard deviation** above and below its nominal central value. Historical standard deviations use 10,000 entries, including the nominal input. Updated standard deviations exclude that entry and use 9,999 random samples. These bands do not include additional smoothing or perturbative-QCD model uncertainties, and are not Monte Carlo standard errors of the mean. The two versions share correlated inputs, so band overlap is not a significance test for independent measurements.
 
-[逐点数据](reader_results/data/comparison_vp.csv) · [矢量 PDF](reader_results/figures/github_vp.pdf)
+![Comparison of VP factors with propagated input uncertainty bands](reader_results/figures/github_vp.png)
 
-## 程序与分支
+[Point-by-point data](reader_results/data/comparison_vp.csv) · [Vector PDF](reader_results/figures/github_vp.pdf)
 
-当前为 numerical-updates 分支。paper-reproduction 分支固定保存逐点对齐论文附录的历史重放，初始提交为 5cabb61。
+## Branches and updated calculations
 
-更新实现修复明确的公式和单位错误，采用带残差检查的 ISR 线性反演、VP 收敛求解、一次按能量阈值配置的平滑以及逐样本协方差传播。新接口位于 src/updated.jl，历史接口不变。
+- `paper-reproduction`: preserves the historical calculation matching the paper appendix, starting at commit `5cabb61`.
+- `numerical-updates`: provides corrected formula implementations and unit conversions, direct ISR inversion with residual checks, converged VP iteration, a single configurable smoothing stage, and paired covariance propagation.
 
-    julia --project=. test/runtests.jl
-    julia --project=. scripts/audit_updates.jl
-    julia --project=. scripts/check_updated_methods.jl
-    julia --project=. scripts/validate_updates.jl
-    julia --project=. scripts/export_observed_cross_sections.jl
+The updated implementation is in `src/updated.jl`; historical interfaces retain their original behavior. Run the following from the repository root:
 
-更新结果在 results/updates/；最终采用范围以 acceptance.toml 为准。负的反演估计值未截零，平滑及 pQCD 等模型误差不包含在输入误差协方差内。详见 [更新检查报告](docs/numerical_updates.md)。
+```sh
+julia --project=. test/runtests.jl
+julia --project=. scripts/audit_updates.jl
+julia --project=. scripts/check_updated_methods.jl
+julia --project=. scripts/validate_updates.jl
+julia --project=. scripts/export_observed_cross_sections.jl
+```
 
-其中 `results/updates/` 的 dressed/Born 列保留原先求解器光滑谱的审计记录。最终乘回原始实验数据的截面及协方差在 `results/observed_cross_sections/`，读者表和主页图采用后者；由 `scripts/export_observed_cross_sections.jl` 重新计算。
+Numerical audit outputs are in `results/updates/`, with the accepted scope recorded in `acceptance.toml`. Negative unfolded sample estimates are retained rather than clipped. Smoothing and perturbative-QCD model uncertainties are not included in the input covariance. See the [numerical audit report](docs/numerical_updates.md).
 
-## 历史复现入口
+The dressed/Born columns in `results/updates/` preserve the earlier audit of the smoothed solver spectrum. **The reported cross sections apply the factors to the original experimental data:** their results and covariance matrices are in `results/observed_cross_sections/`, generated by `scripts/export_observed_cross_sections.jl`. The reader tables and main figures use these reported results.
 
-独立 Julia 包，按大仓库 MATLAB 实现重算 [arXiv:2002.09838](https://arxiv.org/abs/2002.09838) 最终附录的逆 ISR、VP 因子及其误差。
+## Historical reproduction
 
-**状态：ISR 和 VP 历史样本已完整重算，附录全部 $209$ 点验证通过，测试 $25/25$ 通过。** 现已包含完整 ISR → dressed $R_b$ → VP 重放；另已提供原始实验数据乘回修正因子的 dressed/Born 汇总和配对误差检查；共振拟合尚未整体验收。旧项目未被替换。
+The historical workflow follows the original MATLAB implementation and reproduces the appendix inverse ISR and VP factors and their uncertainties.
 
-## 结构
+**Validation:** all 209 appendix points pass the historical ISR and VP comparisons. The historical test suite passed 25 tests; the expanded updated suite passed 45 tests. The full ISR → dressed $R_b$ → VP chain has been replayed. Reported dressed/Born cross sections and paired uncertainties are also available. Resonance fitting has not undergone end-to-end validation.
 
-- `src/`：解析积分、普通 LOWESS、逐能点迭代、随机抽样。
-- `scripts/reproduce.jl`：ISR 历史样本重放和新种子计算。
-- `scripts/reproduce_vp.jl`：默认重新计算 ISR 后接续 VP，或仅重放保存的 VP 输入。
-- `scripts/vp_convention_check.jl`：原程序与论文强子虚部约定的单项差异检查。
-- `scripts/export_legacy.py`：一次性从原 MATLAB 文件提取输入。
-- `data/`：截面、误差、历史随机截面及来源记录。
-- `reference/`：仅供验证的附录及原程序结果。
-- `test/`：数值核与历史名义结果检查。
-- `docs/`：方法、输入和未决事项。
-- `results/`：本包新计算的结果及验证报告。
+## Repository layout
 
-## 运行
+- `src/`: integration kernels, ordinary LOWESS smoothing, historical iterations, updated solvers and sampling utilities.
+- `scripts/reproduce.jl`: historical ISR replay and fresh-seed sampling.
+- `scripts/reproduce_vp.jl`: full ISR-to-VP replay, or replay from saved VP inputs.
+- `scripts/vp_convention_check.jl`: comparison of the historical hadronic imaginary-part implementation with the paper convention.
+- `scripts/export_observed_cross_sections.jl`: reported cross sections from original experimental inputs and paired correction factors.
+- `scripts/export_legacy.py`: one-time extraction of inputs from the original MATLAB files.
+- `data/`: cross sections, uncertainties, historical samples and provenance.
+- `reference/`: appendix values and historical outputs used for validation.
+- `reader_results/`: ready-to-use data tables, figures, covariance matrices and a standalone Python plotting script.
+- `test/`: numerical-kernel and regression tests.
+- `docs/`: methods, inputs and limitations.
+- `results/`: computed outputs and validation reports.
 
-仅依赖 Julia 标准库，开发测试版本为 Julia 1.12.6。在本包目录运行：
+## Running the historical calculation
+
+The Julia calculation uses only standard libraries and was developed and tested with Julia 1.12.6. From the repository root:
 
 ```sh
 julia --project=. test/runtests.jl
@@ -85,24 +92,24 @@ julia --project=. --threads=4 scripts/reproduce_vp.jl
 julia --project=. scripts/reproduce_vp.jl saved
 ```
 
-输入已随包提供，运行无需 MATLAB、Python、外置硬盘或旧项目。历史模式从原始随机截面重新平滑和反演；保存的 ISR 因子仅用于检验，不参与求解。新种子模式重新抽样，不应逐位匹配历史有限样本均值。
+Inputs are bundled with the repository. Running the Julia calculation requires neither MATLAB nor Python, an external drive, or the original project. Historical mode repeats smoothing and unfolding from the saved input samples; saved ISR factors are used only for validation. Fresh-seed mode generates new samples and is not expected to reproduce finite historical ensemble means bit for bit.
 
-输出分别在 `results/historical/` 和 `results/fresh/`；最终验证报告为 `validation.toml`。未通过检查时不会写出新的成功报告。
+ISR outputs are written to `results/historical/` and `results/fresh/`. VP outputs are written to `results/vp/` or `results/vp_saved/`. Each workflow writes a `validation.toml` report; failed checks do not produce a new successful validation report.
 
-## 对齐约定
+## Historical conventions
 
-使用历史网格，阈值为 $10.55852\,\mathrm{GeV}$，截面换算为 $\sigma=86.85R/s$（nb）。从第 $23$ 点，即 $10.6659\,\mathrm{GeV}$，开始对截面做普通 LOWESS，比例 $0.045$，无稳健重加权，仅初始化平滑。以 $s=E^2$ 插值，解析积分，按原程序逐能点求解，保留 $30$ 状态、$29$ 次更新。
+The historical energy grid starts at the threshold $10.55852\,\mathrm{GeV}$, with the cross-section conversion $\sigma=86.85R/s$ in nb. Ordinary LOWESS smoothing starts at point 23, corresponding to $10.6659\,\mathrm{GeV}$, with span fraction 0.045 and no robust reweighting. ISR smoothing is applied at initialization. The historical ISR calculation interpolates in $s=E^2$, integrates segments analytically, and solves sequentially in energy using 30 stored states, or 29 updates. The historical VP stage retains its separate smoothing convention.
 
-附录中心值取统计抽样的逆因子均值；误差取总误差抽样的逆因子样本标准差。名义输入输出不等于抽样均值。报告另列 $30$ 与 $60$ 状态的敏感性，不将历史设置自动称为收敛极限。
+For ISR, appendix centers are the inverse-factor means from statistical-input samples, while uncertainties are sample standard deviations from total-input-error samples. VP centers and uncertainties use the historical total-input ensemble. Nominal-input results and ensemble means are distinct. The audit compares different ISR iteration counts rather than assuming that the historical choice is converged.
 
-## 一次性导入
+## One-time input extraction and provenance
 
-维护者连接含 VP_B 的外盘后，用装有 NumPy/SciPy 的 Python 运行 `python scripts/export_legacy.py`。脚本只读原文件，导出实际计算输入并记录 SHA-256。导入后应将 `data/` 一并分发。
+Maintainers with access to the original `VP_B` archive can run `python scripts/export_legacy.py` using NumPy and SciPy. This optional import step reads the original MATLAB files, exports the calculation inputs, and records SHA-256 hashes. Distribute the exported `data/` directory with the package; ordinary users do not need to repeat this step.
 
-二进制格式为 little-endian Float64，每个样本的全部能点连续排列；形状写入 `data/provenance.json`。Julia 读取为“能点 × 样本”。每个数组约 $16.8\,\mathrm{MB}$。
+Binary samples use little-endian Float64, with all energy points for each sample stored consecutively. Array shapes are recorded in the provenance files. Julia loads them as energy-by-sample matrices. The bottom-region sample arrays are approximately 16.8 MB each; background arrays have different sizes.
 
-附录中心值最大绝对差为 $8.39\times10^{-12}$，误差最大绝对差为 $2.57\times10^{-13}$。ISR 测试和新种子两组各 $10000$ 次已运行。VP 全链对比最大绝对差：中心值 $7.33\times10^{-15}$，误差 $7.49\times10^{-18}$。详细证据见 [验证记录](docs/reproduction.md)。
+For the historical ISR replay, the maximum absolute appendix differences are $8.39\times10^{-12}$ for central values and $2.57\times10^{-13}$ for uncertainties. Historical replay and fresh-seed ISR runs each used 10,000 entries. For the full historical VP chain, the maximum absolute differences are $7.33\times10^{-15}$ for central values and $7.49\times10^{-18}$ for uncertainties. See the [reproduction record](docs/reproduction.md).
 
-VP 复现约定、输入链和原程序与论文公式的差异见 [VP 验证说明](docs/vp_reproduction.md)。该历史模式保留原程序的强子虚部系数，不等于逐式实现论文公式。
+The [VP reproduction notes](docs/vp_reproduction.md) describe the input chain and the differences between the historical implementation and the paper formulas. Historical mode deliberately preserves the original hadronic imaginary-part coefficient; it is not a literal implementation of every formula in the paper.
 
-尚未选择开源许可证；本地整理不等于已上传 GitHub。
+An open-source license has not yet been selected.
