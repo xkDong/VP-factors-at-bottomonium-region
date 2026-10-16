@@ -1,0 +1,66 @@
+{
+  "mean": {
+    "max_abs_percent": 0.046102506657941245,
+    "signed_percent": -0.046102506657941245,
+    "energy_GeV": 10.6659,
+    "median_abs_percent": 0.024103170635181304,
+    "min_percent": -0.046102506657941245,
+    "max_percent": 0.00012887099962721749
+  },
+  "nominal": {
+    "max_abs_percent": 0.046090050398817084,
+    "signed_percent": -0.046090050398817084,
+    "energy_GeV": 10.6659,
+    "median_abs_percent": 0.024088174361913683,
+    "min_percent": -0.046090050398817084,
+    "max_percent": 6.938694259162048e-05
+  },
+  "sd": {
+    "max_abs_percent": 0.6543811699765367,
+    "signed_percent": 0.6543811699765367,
+    "energy_GeV": 10.6659,
+    "median_abs_percent": 0.02661821474377879,
+    "min_percent": -0.41562608566770853,
+    "max_percent": 0.6543811699765367
+  },
+  "old_sd_range": [
+    0.0007063624708679808,
+    0.0007905358065036753
+  ],
+  "new_sd_range": [
+    0.0007059616227970247,
+    0.000793042590501506
+  ],
+  "old_relative_sd_percent_range": [
+    0.06563835938734694,
+    0.07399799176595023
+  ],
+  "new_relative_sd_percent_range": [
+    0.0656319173623676,
+    0.0742649601457801
+  ],
+  "largest_sd_change_row": {
+    "energy_GeV": 10.6659,
+    "old_mean": 1.0754395749701433,
+    "new_mean": 1.0749437703684905,
+    "old_nominal": 1.0741648810639666,
+    "new_nominal": 1.0736697979289178,
+    "old_sd": 0.0007090488348676075,
+    "new_sd": 0.0007136887169289192,
+    "mean_change_percent": -0.046102506657941245,
+    "nominal_change_percent": -0.046090050398817084,
+    "sd_change_percent": 0.6543811699765367
+  },
+  "largest_mean_change_row": {
+    "energy_GeV": 10.6659,
+    "old_mean": 1.0754395749701433,
+    "new_mean": 1.0749437703684905,
+    "old_nominal": 1.0741648810639666,
+    "new_nominal": 1.0736697979289178,
+    "old_sd": 0.0007090488348676075,
+    "new_sd": 0.0007136887169289192,
+    "mean_change_percent": -0.046102506657941245,
+    "nominal_change_percent": -0.046090050398817084,
+    "sd_change_percent": 0.6543811699765367
+  }
+}

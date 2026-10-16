@@ -1,5 +1,45 @@
 # PaperISR.jl：论文复现与数值更新
 
+**直接使用结果：** [读者结果包](reader_results/README.md) 整理了新旧版本全部 209 个能点的 ISR、VP 因子及误差 CSV、PNG/PDF 图、新版协方差矩阵和读取示例。该目录可独立分发，读取结果或重画图无需外接硬盘和旧仓库。
+
+## 主要结果：新旧版本对比
+
+蓝色虚线为文章复现版本，橙色实线为数值更新版本。四张图均比较相同定义的**名义输入结果**；下方小图为 $100(X_{\rm new}/X_{\rm old}-1)\%$。曲线连接 209 个测量能点以方便阅读，不代表额外的连续谱拟合。论文采用的抽样均值另存于 CSV，详见 [更新说明](reader_results/CHANGES.md)。
+
+### ISR 修正因子
+
+展示逆 ISR 因子 $C_{\rm ISR}=1/(1+\delta)$。两版名义值大部分重合，主要差别在低能点；最大相对变化约为 0.618%。
+
+![新旧版本逆 ISR 因子对比](reader_results/figures/github_isr.png)
+
+[逐点数据](reader_results/data/comparison_isr.csv) · [矢量 PDF](reader_results/figures/github_isr.pdf)
+
+### Dressed 截面
+
+截面单位为 nb。两版均用光滑前的原始实验截面乘以各自逆 ISR 因子；光滑谱仅用于求解修正因子，不替代最终报告的实验数据。
+
+![新旧版本 dressed 截面对比](reader_results/figures/github_sigma_dressed.png)
+
+[逐点数据](reader_results/data/comparison_sigma_dressed_nb.csv) · [矢量 PDF](reader_results/figures/github_sigma_dressed.pdf)
+
+### Born 截面
+
+两版均按 $\sigma_{\rm Born}=\sigma_{\rm obs}^{\rm raw}C_{\rm ISR}/F_{\rm VP}$ 计算，单位为 nb。均值和误差来自逐样本比值，保留原始输入、ISR 与 VP 的相关性；旧版 Born 是由已验证的历史样本推导的结果，尚未与原论文独立的 Born 表逐点核对。
+
+![新旧版本 Born 截面对比](reader_results/figures/github_sigma_born.png)
+
+[逐点数据](reader_results/data/comparison_sigma_born_nb.csv) · [矢量 PDF](reader_results/figures/github_sigma_born.pdf)
+
+### VP 因子与误差带
+
+阴影分别表示各版名义中心值上下一个**输入误差传播标准差**。旧版标准差包含 10000 项，新版排除首个名义样本，使用 9999 个随机样本。误差带不包含光滑、pQCD 等额外模型不确定度，也不是均值的蒙特卡洛标准误。两版输入相关，误差带重叠程度不能直接用于独立测量的显著性判断。
+
+![新旧版本 VP 因子及输入误差带](reader_results/figures/github_vp.png)
+
+[逐点数据](reader_results/data/comparison_vp.csv) · [矢量 PDF](reader_results/figures/github_vp.pdf)
+
+## 程序与分支
+
 当前为 numerical-updates 分支。paper-reproduction 分支固定保存逐点对齐论文附录的历史重放，初始提交为 5cabb61。
 
 更新实现修复明确的公式和单位错误，采用带残差检查的 ISR 线性反演、VP 收敛求解、一次按能量阈值配置的平滑以及逐样本协方差传播。新接口位于 src/updated.jl，历史接口不变。
@@ -8,14 +48,17 @@
     julia --project=. scripts/audit_updates.jl
     julia --project=. scripts/check_updated_methods.jl
     julia --project=. scripts/validate_updates.jl
+    julia --project=. scripts/export_observed_cross_sections.jl
 
 更新结果在 results/updates/；最终采用范围以 acceptance.toml 为准。负的反演估计值未截零，平滑及 pQCD 等模型误差不包含在输入误差协方差内。详见 [更新检查报告](docs/numerical_updates.md)。
+
+其中 `results/updates/` 的 dressed/Born 列保留原先求解器光滑谱的审计记录。最终乘回原始实验数据的截面及协方差在 `results/observed_cross_sections/`，读者表和主页图采用后者；由 `scripts/export_observed_cross_sections.jl` 重新计算。
 
 ## 历史复现入口
 
 独立 Julia 包，按大仓库 MATLAB 实现重算 [arXiv:2002.09838](https://arxiv.org/abs/2002.09838) 最终附录的逆 ISR、VP 因子及其误差。
 
-**状态：ISR 和 VP 历史样本已完整重算，附录全部 $209$ 点验证通过，测试 $25/25$ 通过。** 现已包含完整 ISR → dressed $R_b$ → VP 重放；尚未对 Born 截面汇总和共振拟合做整体验收。旧项目未被替换。
+**状态：ISR 和 VP 历史样本已完整重算，附录全部 $209$ 点验证通过，测试 $25/25$ 通过。** 现已包含完整 ISR → dressed $R_b$ → VP 重放；另已提供原始实验数据乘回修正因子的 dressed/Born 汇总和配对误差检查；共振拟合尚未整体验收。旧项目未被替换。
 
 ## 结构
 

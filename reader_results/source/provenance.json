@@ -1,0 +1,128 @@
+{
+  "old_isr.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/historical/appendix_comparison.csv",
+    "sha256": "1af418414f2e7b3618df317666d031d368d156c10cddef5ffeb5ab3b92fc8074"
+  },
+  "old_isr_nominal.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/historical/total_nominal.csv",
+    "sha256": "49051a82c0231ff77bc74e3d3db27ed3a936c3ba0e9891bd1b0a96a82c2b650b"
+  },
+  "old_vp.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/vp/appendix_comparison.csv",
+    "sha256": "56afa2f7d4841645eea0c1a2669df6fc066fc9ef4171c9adf54e69e00860680d"
+  },
+  "old_vp_nominal.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/vp/nominal.csv",
+    "sha256": "3c5eac7aa246141339e90b1368d3afb9c4acbe281a8b4210055c7952ac6e090c"
+  },
+  "new_results.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/comparison.csv",
+    "sha256": "f8f9904f26d90be299c7ffc6520f6aae47fb3245ec5edabe503c0d9c802f3783"
+  },
+  "old_isr_validation.toml": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/historical/validation.toml",
+    "sha256": "58d92459f4541569b4f003affa021907a751a17224a9301f05aa2dca230d4ba0"
+  },
+  "old_vp_validation.toml": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "results/vp/validation.toml",
+    "sha256": "1b8fdaae91cbd6379eaa3803396690f5cd12dc844c8c69aa33f84d3d2f211279"
+  },
+  "new_acceptance.toml": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/acceptance.toml",
+    "sha256": "30e9ffebcccefcb4d6ce86c8bdf9914341e018ebe16083e7d453fe2a07ff7169"
+  },
+  "new_isr_covariance.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/isr_covariance.csv",
+    "sha256": "d97743d187f2b51f8f12054d70d337d3356acb57eed734f3fd0ecd011e2306ba"
+  },
+  "new_vp_covariance.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/vp_covariance.csv",
+    "sha256": "f08bb853b25b92a9cbf2f205c7fcdbcc16cb4961c3577f5bed8087ac355afae4"
+  },
+  "new_dressed_covariance.csv": {
+    "path": "results/observed_cross_sections/dressed_covariance.csv",
+    "definition": "Paired corrections applied to original unsmoothed experimental sigma_nb",
+    "script_sha256": "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55",
+    "sha256": "fdc4f989ac1f6ea303b37751c92bbd50b1c99b4fc7f3aca38c1ca61bd5dc0c95"
+  },
+  "new_born_covariance.csv": {
+    "path": "results/observed_cross_sections/born_covariance.csv",
+    "definition": "Paired corrections applied to original unsmoothed experimental sigma_nb",
+    "script_sha256": "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55",
+    "sha256": "24ec4526e612af1119d0e1ae8ed0ad54573684f99c2eb19012207623812fa2ae"
+  },
+  "new_error_components.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/error_components.csv",
+    "sha256": "2870d5f25640f722decf8f069f826be18c7c2813107b11be1b281a1775a76e56"
+  },
+  "new_test_summary.json": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/test_summary.json",
+    "sha256": "aba78063c5d7982aeda4ff9b5dbbc542b579d7a8461412273772f55ddcafbff4"
+  },
+  "new_independent_methods.toml": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/independent_methods.toml",
+    "sha256": "d641cd4165626b8830638c5d7929cc3b2b905d208ace8d6591e454cabf034158"
+  },
+  "new_smoothing_sensitivity.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/smoothing_sensitivity.csv",
+    "sha256": "6bd91cdfdeb07b5d74dccaa582bf4079db407b7573ec9a9feffabd1ffd11ae40"
+  },
+  "new_legacy_iteration_convergence.csv": {
+    "commit": "27d9bd11941f90ac9876d6f1be473147f9961d49",
+    "path": "results/updates/legacy_iteration_convergence.csv",
+    "sha256": "59c7741228eb82da2d76a47dd69924fe9b97c33954060ae0e7d785e767f9f6e9"
+  },
+  "old_dressed_R_summary.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": "data/vp/Rbb.f64",
+    "input_sha256": "1bd10251507ce2e19f26b5cfdef4805e188cfa17a0e1b657b21ece572e8621db",
+    "energy_sha256": "f1a463200712e51b6ccee39b1eddcafe17c1d8f2131927360fe55a27400e6833",
+    "transformation": "Shape 10000 x 210; remove threshold; first nominal, mean and sample SD of all 10000 rows; before second VP smoothing",
+    "sha256": "3537d63153fad9442297e047ebe917b6b52a33a363f14760ede8f2f5bcb869d0"
+  },
+  "old_born_R_summary.csv": {
+    "commit": "5cabb61b96a60c149b59a6223dedd2027493d5b5",
+    "path": [
+      "data/vp/Rbb.f64",
+      "reference/vp/factors.f64"
+    ],
+    "input_sha256": [
+      "1bd10251507ce2e19f26b5cfdef4805e188cfa17a0e1b657b21ece572e8621db",
+      "252bf81155837626304c7986e35ac823ec379d860554ae36a8237b01c6e278f8"
+    ],
+    "transformation": "Derived Born R = paired unsmoothed dressed R / saved VP factor; nominal first row, mean and sample SD over 10000 rows; not independently matched to a published Born table",
+    "sha256": "265a8e27537edc93459aeffec52d8ee3ee1bfa12e703c3f0efb80c2177ec3938"
+  },
+  "new_applied_results.csv": {
+    "path": "results/observed_cross_sections/comparison.csv",
+    "definition": "Paired corrections applied to original unsmoothed experimental sigma_nb",
+    "script_sha256": "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55",
+    "sha256": "9c441f5bd83aa1877cd15a690c3d32a025b4f39e168292ae33bdafe0848c1a7f"
+  },
+  "new_applied_sigma.csv": {
+    "path": "results/observed_cross_sections/sigma.csv",
+    "definition": "Paired corrections applied to original unsmoothed experimental sigma_nb",
+    "script_sha256": "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55",
+    "sha256": "9a82d2e7f6addb37328415bb4c96211d35d9718381afa7833ca6f70933461e51"
+  },
+  "new_applied_validation.toml": {
+    "path": "results/observed_cross_sections/validation.toml",
+    "definition": "Paired corrections applied to original unsmoothed experimental sigma_nb",
+    "script_sha256": "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55",
+    "sha256": "8ba6ea52a1337b10a8738525d191ff2d91188814863c26f88ff92fd0fccb3a11"
+  }
+}

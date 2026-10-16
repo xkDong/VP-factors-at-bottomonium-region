@@ -1,0 +1,14 @@
+{
+  "standalone_regeneration": "pass",
+  "csv_files": 21,
+  "readme_links": "pass",
+  "visual_review": "All four overview figures and 16 panel crops inspected; legible.",
+  "julia_rerun": true,
+  "changes_links": "pass",
+  "source_hashes": "pass",
+  "sigma_conversion": "pass",
+  "sigma_covariance_diagonal": "pass",
+  "github_figures": "Four main figures; dressed and Born overviews and panel crops reviewed after raw-input correction",
+  "series_provenance": "series provenance clean: 8 series, 1672 connected rows",
+  "raw_input_cross_sections": "Paired Julia recomputation passed; ISR/VP unchanged; dressed/Born covariance PSD and diagonals checked"
+}

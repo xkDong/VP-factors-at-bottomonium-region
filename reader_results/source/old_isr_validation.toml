@@ -1,0 +1,25 @@
+mode = "historical"
+total_toys = 10000
+states = 30
+total_literal_max_abs = 9.102940623506584e-12
+appendix_mean_max_abs = 8.386846772623358e-12
+julia_version = "1.12.6"
+stat_30_to_60_max_abs = 0.0016710200519172713
+threads = 4
+total_30_to_60_max_abs = 0.0016710200519172713
+completed = true
+appendix_error_max_abs = 2.5668009384638424e-13
+stat_full_replay_max_abs = 1.028421792170775e-11
+stat_literal_max_abs = 8.733014311701481e-12
+stat_toys = 10000
+total_full_replay_max_abs = 1.0450085241586748e-11
+seed = 2020
+
+[hashes]
+"data/total_draws.f64" = "de42bcc3b0183ca20c3de2e0e9380baa00e6d4ca828083565e805ee66e470dfe"
+"reference/cpc.csv" = "557742965c3c286aa3bfd57c773c92065606a67e21c2ac2cd7bee7f6082fdfa4"
+"src/PaperISR.jl" = "22390426aa45d21f01c42b43fadc5840e0d02f91b5fceefa20ecf4641472292b"
+"scripts/reproduce.jl" = "67a75ea1f58e80ec10b26f6c39b37278a4703c715a02aef3048d3ee8900f1e8a"
+"data/stat_input.csv" = "0da7132f8f7ce4f304ed7945b3513823582ed51add035522f2cf624ceb4b3411"
+"data/stat_draws.f64" = "7ffd8450a808f6b4d213f833d0dd3e8b8c6acbebf70bfec6e777273045b37b8f"
+"data/total_input.csv" = "eaf18273f22a2c9f347d7bf5b87bafad471c2912b5c0e162bc6f765e15939e5d"

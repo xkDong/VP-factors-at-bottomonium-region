@@ -1,0 +1,19 @@
+vp_iterations = 7
+vp_residual = 1.6231460620019789e-13
+isr_residual = 4.440892098500626e-16
+completed = true
+toys = 9999
+definition = "Original unsmoothed experimental sigma_nb times paired ISR inverse, divided by paired VP for Born"
+
+[output_hashes]
+"comparison.csv" = "9c441f5bd83aa1877cd15a690c3d32a025b4f39e168292ae33bdafe0848c1a7f"
+"sigma.csv" = "9a82d2e7f6addb37328415bb4c96211d35d9718381afa7833ca6f70933461e51"
+"dressed_covariance.csv" = "fdc4f989ac1f6ea303b37751c92bbd50b1c99b4fc7f3aca38c1ca61bd5dc0c95"
+"born_covariance.csv" = "24ec4526e612af1119d0e1ae8ed0ad54573684f99c2eb19012207623812fa2ae"
+
+[input_hashes]
+"scripts/export_observed_cross_sections.jl" = "56303a87cfbc87003e2dfe4e36979c74eea815fb2dd06bb15052efdfaf5aad55"
+"data/total_draws.f64" = "de42bcc3b0183ca20c3de2e0e9380baa00e6d4ca828083565e805ee66e470dfe"
+"data/vp/Rbes.f64" = "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+"src/updated.jl" = "950b1190e357d1a2c6974a4fe2ed519107ade46bc98d4cf45213a9f80285943f"
+"data/vp/Rpdg.f64" = "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"

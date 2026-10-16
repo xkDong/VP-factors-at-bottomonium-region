@@ -1,0 +1,9 @@
+{
+  "bindings_checked": 30,
+  "findings": [],
+  "manifest": "/Users/dongxiangkun/Desktop/matlab/PaperISR.jl/reader_results/verification/github_sigma_dressed.provenance.json",
+  "overview_figure": "../figures/github_sigma_dressed.png",
+  "quantities_declared": 30,
+  "result": "pass",
+  "schema_version": 1
+}

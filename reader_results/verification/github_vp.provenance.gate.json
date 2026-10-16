@@ -1,0 +1,9 @@
+{
+  "bindings_checked": 30,
+  "findings": [],
+  "manifest": "/Users/dongxiangkun/Desktop/matlab/PaperISR.jl/reader_results/verification/github_vp.provenance.json",
+  "overview_figure": "../figures/github_vp.png",
+  "quantities_declared": 30,
+  "result": "pass",
+  "schema_version": 1
+}

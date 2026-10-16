@@ -1,0 +1,12 @@
+{
+  "isr": {
+    "max_abs_nominal_change_percent": 0.6177269620215475,
+    "energy_GeV": 10.6063,
+    "max_abs_sd_change": 0.029656709809345844
+  },
+  "vp": {
+    "max_abs_nominal_change_percent": 0.046090050398817084,
+    "energy_GeV": 10.6659,
+    "max_abs_sd_change": 4.639882061311653e-06
+  }
+}

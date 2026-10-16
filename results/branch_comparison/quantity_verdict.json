@@ -1,0 +1,16 @@
+{
+  "schema_id": "quantity_verdict_v1",
+  "schema_version": 1,
+  "quantities": [
+    "old_mean",
+    "new_mean",
+    "old_nominal",
+    "new_nominal",
+    "old_sd",
+    "new_sd",
+    "mean_change_percent",
+    "nominal_change_percent",
+    "sd_change_percent"
+  ],
+  "verdict": "pass"
+}

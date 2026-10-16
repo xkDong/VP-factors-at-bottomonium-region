@@ -1,0 +1,91 @@
+{
+  "figure": "vp_branches.pdf",
+  "data": [
+    "comparison.csv"
+  ],
+  "script": "../../scripts/compare_vp_branches.py",
+  "command": "python scripts/compare_vp_branches.py",
+  "style": "matplotlib rcParams in script; blue/orange; scatter only",
+  "source_commits": {
+    "paper-reproduction": "5cabb61",
+    "numerical-updates": "27d9bd1"
+  },
+  "source_hashes": {
+    "5cabb61:results/vp/appendix_comparison.csv": "56afa2f7d4841645eea0c1a2669df6fc066fc9ef4171c9adf54e69e00860680d",
+    "5cabb61:results/vp/nominal.csv": "3c5eac7aa246141339e90b1368d3afb9c4acbe281a8b4210055c7952ac6e090c",
+    "27d9bd1:results/updates/comparison.csv": "f8f9904f26d90be299c7ffc6520f6aae47fb3245ec5edabe503c0d9c802f3783",
+    "5cabb61:results/vp/validation.toml": "1b8fdaae91cbd6379eaa3803396690f5cd12dc844c8c69aa33f84d3d2f211279",
+    "27d9bd1:results/updates/acceptance.toml": "30e9ffebcccefcb4d6ce86c8bdf9914341e018ebe16083e7d453fe2a07ff7169"
+  },
+  "scope": "Given historical input uncertainty model and declared single-smoothing signed linear estimator",
+  "display_acceptance": {
+    "plotted_quantities": [
+      "old_mean",
+      "new_mean",
+      "old_nominal",
+      "new_nominal",
+      "old_sd",
+      "new_sd",
+      "mean_change_percent",
+      "nominal_change_percent",
+      "sd_change_percent"
+    ],
+    "verdict_bindings": [
+      {
+        "quantity": "old_mean",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "new_mean",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "old_nominal",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "new_nominal",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "old_sd",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "new_sd",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "mean_change_percent",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "nominal_change_percent",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      },
+      {
+        "quantity": "sd_change_percent",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "b683a3b0cdca8071e26b1224e9dd925db2b3e2773696255dd510df7726fef1cf"
+      }
+    ],
+    "overview_figure": {
+      "path": "vp_branches.png",
+      "archived": true
+    }
+  },
+  "sha256": {
+    "comparison.csv": "56b194042a0e464cf77b4a5759f0f8fcdaed11b2d297dc204cef37bcb1901c98",
+    "vp_branches.pdf": "453fdd52b495935ec8d5265ed89abf864acf6f9328703720480c8165f8db3d86",
+    "vp_branches.png": "e505620b1a876121d35a9b4f2806db73c33f47970598d690baf360228904fa43",
+    "../../scripts/compare_vp_branches.py": "28ca427d8f9efbb9e2405d0cbd164d19683d3079de9e45ca3ffbbaa72994f60f"
+  }
+}

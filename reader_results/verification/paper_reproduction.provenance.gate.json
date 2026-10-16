@@ -1,0 +1,9 @@
+{
+  "bindings_checked": 30,
+  "findings": [],
+  "manifest": "/Users/dongxiangkun/Desktop/matlab/PaperISR.jl/reader_results/verification/paper_reproduction.provenance.json",
+  "overview_figure": "../figures/paper_reproduction.png",
+  "quantities_declared": 30,
+  "result": "pass",
+  "schema_version": 1
+}
