@@ -8,7 +8,34 @@ This branch, `besii-paper-consistency`, replaces the internal charm-region input
 
 The current results are in [`results/besii/results.csv`](results/besii/results.csv). They cover all 209 experimental bottomonium energies and include ISR and VP factors, dressed and Born cross sections, and propagated errors. Cross sections are formed from **unsmoothed experimental samples**, with paired ISR and VP factors. Older `results/historical` and `results/vp` files are historical references, not this branch's new results.
 
+The full rerun used 10,000 samples per ensemble. All 35 Julia tests passed, with primary-source input checks and covariance validation.
+
+| Quantity | Change from `paper-reproduction` |
+| --- | --- |
+| ISR correction and dressed cross section | Unchanged |
+| VP mean | Decreases by 0.001829%–0.001893% |
+| VP propagated uncertainty | Increases by 5.318%–6.688% |
+| Born cross-section mean | Increases by 0.001772%–0.001922% |
+
+These changes isolate the input replacement while retaining the historical algorithm and uncertainty model. The error increase is a **relative change in the standard deviation**, not a percentage-point increase in the VP factor.
+
+### Download the data
+
+[Complete table](results/besii/results.csv) · [ISR factors](results/besii/isr.csv) · [VP factors](results/besii/vp.csv) · [Cross sections](results/besii/cross_sections.csv) · [Old/new comparison](results/besii/comparison.csv)
+
+See the [data guide](results/besii/README.md) for units, column definitions, covariance matrices and how to use the paired results. The data guide also distinguishes propagated experimental errors from Monte Carlo errors. All result tables contain 209 energies; the [published BES input table](data/besii/input.csv) contains 77 charm-region energies.
+
+### Factors and cross sections
+
 ![BES replacement results](results/besii/figures/overview.png)
+
+The bands show propagated total uncertainties under the historical error model. The old and new VP/Born curves nearly overlap; the smaller changes are shown separately below.
+
+![Relative changes after the BES input replacement](results/besii/figures/relative_changes.png)
+
+### Charm-region inputs
+
+![Historical and published BES input comparison](results/besii/figures/input_comparison.png)
 
 [Comparison with the paper-reproduction baseline](results/besii/comparison.csv) · [Input comparison](results/besii/figures/input_comparison.png) · [Validation report](results/besii/validation.toml) · [Interpretation](docs/besii_results.md)
 
@@ -29,6 +56,7 @@ Only Julia standard libraries are required for the calculation. Tested with Juli
 ```sh
 julia --project=. --threads=4 test/runtests.jl
 julia --project=. --threads=4 scripts/reproduce_vp.jl
+python3 scripts/export_besii_tables.py
 ```
 
 The second command recomputes both 10,000-sample ISR ensembles and the old/new VP ensembles, writes cross sections and covariance matrices, and checks the historical replay and direct-integration reference. It does not need the external drive, desktop archive, thesis, or MATLAB.
