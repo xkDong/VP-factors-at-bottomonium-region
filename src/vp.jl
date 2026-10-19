@@ -47,7 +47,7 @@ vp_smooth(energy,draws)=smoothing_matrix(energy;first=22,span=.045)*draws
 function vp_grid(epdg,ebes,ebb)
     pp=collect(2VP_MPI:.001:.36)
     pdg=vp_refine(epdg);bes=vp_refine(ebes);bb=vp_refine(ebb)
-    q1=collect(2.02:.02:3.68);q2=collect(4.65:.05:9.0)
+    q1=collect(2.02:.02:3.68);q2=collect(round(last(ebes)+.05;digits=8):.05:9.0)
     q4=collect(9.01:.01:10.55);q3=vcat(collect(11.25:.05:15),collect(15.5:.5:100))
     e=vcat(pp,pdg,q1,bes,q2,q4,bb,q3)
     n=length(e);background=zeros(n)

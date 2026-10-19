@@ -12,11 +12,12 @@
       "sha256": "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"
     },
     "data/vp/Rbes.f64": {
+      "sha256": "fd0a007e5fc39853fa64dac992d8945b3e40b0298ceae0cf765c10e8dfd3140b",
+      "provenance": "data/besii/provenance.json",
       "shape": [
         10000,
-        117
-      ],
-      "sha256": "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+        77
+      ]
     },
     "data/vp/Rbb.f64": {
       "shape": [
@@ -38,9 +39,16 @@
         210
       ],
       "sha256": "252bf81155837626304c7986e35ac823ec379d860554ae36a8237b01c6e278f8"
+    },
+    "data/vp/Ebes.csv": {
+      "sha256": "ac3c25b8acc074ab26245cde7a3a66bc883941b99180959d3d700ad4ec3df351",
+      "provenance": "data/besii/provenance.json"
     }
   },
-  "a": 4300,
-  "b": 5346,
-  "isr_dressed_input_max_abs": 0.0
+  "isr_dressed_input_max_abs": 0.0,
+  "active_charm_source": "BES published inclusive R, replacing historical internal inputs; see data/besii/provenance.json",
+  "historical_matlab_grid_indices": {
+    "a": 4300,
+    "b": 5346
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "matched_2002_points": 76,
+  "2000_endpoint_verified_against_table": true,
+  "max_systematic_rounding_difference_R": 0.0019199999999999495,
+  "note": "PDG fractional systematic uncertainties retained; paper errors rounded to 0.01."
+}

@@ -1,0 +1,100 @@
+{
+  "sources": {
+    "results/besii/comparison.csv": "565943d93da341f9e131d82ae2149f680fb93b540e7fef72bfaaa07861bbad05",
+    "results/besii/validation.toml": "8c02626909a6ee1a9fc9857bf4b053389dc70e528647cf54509de6e97884fda3",
+    "data/besii/input.csv": "06e71c393126fc7e61be3735a927206b3291e4db2a5c9af6203c0e63e1bb4d87",
+    "reference/legacy_charm/central.csv": "1fcb6a286e966620373d4ae00b40706101d6cac57bab878f97b864c3e0d1fd3b",
+    "scripts/plot_besii_results.py": "edf1e7c9246c01587707e73ffeda05f9d80aff66d25dbb7d556d40d6ad2f6d8a"
+  },
+  "caption": "209 energies; bands are propagated historical-model total SD, not MC error or numerical accuracy. ISR mean uses statistical toys. Input errors combine stat/sys only for display. All comparison entries are paired.",
+  "display_acceptance": {
+    "plotted_quantities": [
+      "input_R",
+      "input_errors",
+      "ISR",
+      "ISR_error",
+      "VP",
+      "VP_error",
+      "dressed",
+      "dressed_error",
+      "Born",
+      "Born_error",
+      "relative_changes"
+    ],
+    "verdict_bindings": [
+      {
+        "quantity": "input_R",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "input_errors",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "ISR",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "ISR_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "VP",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "VP_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "dressed",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "dressed_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "Born",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "Born_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      },
+      {
+        "quantity": "relative_changes",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "472e66725c75cca6a21e3b0d0b16c57ad8cf0d834cba2ef9458c531fe360429f"
+      }
+    ],
+    "overview_figure": {
+      "path": "review_overview.png",
+      "archived": true
+    }
+  },
+  "series_fingerprints": {
+    "historical": "5cabb61 kernels + old inputs + same 10000 samples",
+    "bes": "same kernels + data/besii/provenance.json + same 10000 nuisances"
+  },
+  "outputs": {
+    "review_overview.png": "a84403249fbe31bb5f65e2c3c5056d4e7d52d072b8118efadcda5c4889d05dae",
+    "input_comparison.png": "eae7f099f835644dda3f39bfeb198f5e8432630306c4dbff4cf1a303fc633ee8",
+    "relative_changes.png": "7fab3fb47cc7fc2ffbd7e7ba3da8f219c5149c166450cf76371a2ac1d798fdc6",
+    "overview_panel_4.png": "39e24b033ff25258ba62d1dd96023e195c3b9231178eb7a192d3717ca029fc0c",
+    "overview.png": "214fa96c4e6e2a559ac38ff789a97c1f40d09c49335a078580246bd5655b1a0f",
+    "overview_panel_1.png": "ad7451ed816caa7683902e50eacae0eed17eb68cf178a0921ceefd99204b857f",
+    "overview_panel_2.png": "dd96e6b09384bfc7ccf8d58ca1ada101f87ff8416e46a6b6c14fe2aba53dfff2",
+    "overview_panel_3.png": "7ae63689219b3a453062da0afee7221413671c3be186164c07f66fdc1584e0c9"
+  }
+}

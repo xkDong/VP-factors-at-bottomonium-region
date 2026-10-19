@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "runtime_hashes_verified": 9,
+  "points": 209,
+  "covariance_checks": {
+    "isr": {
+      "min_eigenvalue": 7.008201545039328e-27,
+      "diagonal_sd_max_abs": 2.7755575615628914e-16
+    },
+    "vp": {
+      "min_eigenvalue": 2.272533493600433e-21,
+      "diagonal_sd_max_abs": 3.3610267347050637e-18
+    },
+    "sigma_dressed": {
+      "min_eigenvalue": 7.1489535443423755e-06,
+      "diagonal_sd_max_abs": 1.249000902703301e-16
+    },
+    "sigma_born": {
+      "min_eigenvalue": 6.181814994027478e-06,
+      "diagonal_sd_max_abs": 9.71445146547012e-17
+    }
+  },
+  "limitations": "Historical algorithm retained; no general numerical convergence claim"
+}

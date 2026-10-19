@@ -1,0 +1,26 @@
+{
+  "base_commit": "5cabb61",
+  "selection": "BES 2002 points >=3.70 GeV through 4.8; BES 2000 at 5.0; use 2002 at duplicate 4.6",
+  "rows": 77,
+  "source": "https://pdg.lbl.gov/2020/hadronic-xsections/rpp2020-hadronicrpp_page1001.dat",
+  "citations": [
+    "10.1103/PhysRevLett.88.101802",
+    "10.1103/PhysRevLett.84.594"
+  ],
+  "error_model": "R_i,t = R_i + stat_i*z_stat,t + sys_i*z_sys,t; each component fully correlated across charm energies, two independent Gaussian nuisance streams reused from legacy toys",
+  "legacy_nuisance_reconstruction_max_abs": 1.7763568394002505e-15,
+  "shape": [
+    10000,
+    77
+  ],
+  "first_sample": "Original random background draw, NOT nominal",
+  "hashes": {
+    "data/besii/input.csv": "06e71c393126fc7e61be3735a927206b3291e4db2a5c9af6203c0e63e1bb4d87",
+    "data/besii/pdg2020-R.dat": "a5a08d1307206b8c3ae262bbbabeb4fbd62b2f7000c6b7da967c7daffca14c8e",
+    "data/besii/shared_nuisance.csv": "e1f115a7698a92f673b691cdc7f2c5b4c3700e3eb417fdd192704ebf773b313f",
+    "data/vp/Ebes.csv": "ac3c25b8acc074ab26245cde7a3a66bc883941b99180959d3d700ad4ec3df351",
+    "data/vp/Rbes.f64": "fd0a007e5fc39853fa64dac992d8945b3e40b0298ceae0cf765c10e8dfd3140b",
+    "reference/legacy_charm/central.csv": "1fcb6a286e966620373d4ae00b40706101d6cac57bab878f97b864c3e0d1fd3b",
+    "reference/legacy_charm/Rbes.f64": "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+  }
+}

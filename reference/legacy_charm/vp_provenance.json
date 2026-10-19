@@ -1,0 +1,46 @@
+{
+  "sources": {
+    "inputR_for_MC_tot_err_0320.mat": "c4a5f7990ee3a71fc6b32550e41131abfde20db71b268cfe97b1ea28a970fad7",
+    "vp_smo_tot_err_0320.mat": "12c41d10b48e530a6031108e672bbf60e284ed89499b1272149ce0624adfac78"
+  },
+  "files": {
+    "data/vp/Rpdg.f64": {
+      "shape": [
+        10000,
+        663
+      ],
+      "sha256": "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"
+    },
+    "data/vp/Rbes.f64": {
+      "shape": [
+        10000,
+        117
+      ],
+      "sha256": "fc13ea5576e998bb7a11e6dc0249d9c1d64679d2bbef44c69751f7d1d11b69a4"
+    },
+    "data/vp/Rbb.f64": {
+      "shape": [
+        10000,
+        210
+      ],
+      "sha256": "1bd10251507ce2e19f26b5cfdef4805e188cfa17a0e1b657b21ece572e8621db"
+    },
+    "reference/vp/Rbb_smoothed.f64": {
+      "shape": [
+        10000,
+        210
+      ],
+      "sha256": "da073c77eb9cef3e8149ea7c6e4f9032f2f1fdc8c167ad21db3edb9ddf563db3"
+    },
+    "reference/vp/factors.f64": {
+      "shape": [
+        10000,
+        210
+      ],
+      "sha256": "252bf81155837626304c7986e35ac823ec379d860554ae36a8237b01c6e278f8"
+    }
+  },
+  "a": 4300,
+  "b": 5346,
+  "isr_dressed_input_max_abs": 0.0
+}

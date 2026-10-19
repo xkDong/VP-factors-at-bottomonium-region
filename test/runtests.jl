@@ -43,7 +43,7 @@ else
 end
 @testset "Historical VP" begin
     ep=vec(read_csv(joinpath(root,"data/vp/Epdg.csv")))
-    ec=vec(read_csv(joinpath(root,"data/vp/Ebes.csv")))
+    ec=vec(read_csv(joinpath(root,"reference/legacy_charm/Ebes.csv")))
     eb=vec(read_csv(joinpath(root,"data/vp/Ebb.csv")))
     k=VPKernel(ep,ec,eb)
     grid=read_csv(joinpath(root,"reference/vp/grid.csv"))
@@ -51,7 +51,7 @@ end
     @test maximum(abs.(k.mu./grid[:,2].-1))<1e-12
     ids=[1,2,10000]
     pdg=load_draws(joinpath(root,"data/vp/Rpdg.f64"),length(ep))[:,ids]
-    bes=load_draws(joinpath(root,"data/vp/Rbes.f64"),length(ec))[:,ids]
+    bes=load_draws(joinpath(root,"reference/legacy_charm/Rbes.f64"),length(ec))[:,ids]
     bb=load_draws(joinpath(root,"data/vp/Rbb.f64"),length(eb))[:,ids]
     expected=load_draws(joinpath(root,"reference/vp/factors.f64"),length(eb))[:,ids]
     smooth=load_draws(joinpath(root,"reference/vp/Rbb_smoothed.f64"),length(eb))[:,ids]
@@ -62,4 +62,26 @@ end
         @test maximum(abs.(got[:,i].-vp_literal(k,pdg[:,i],bes[:,i],bb[:,i])[:,3]))<1e-12
     end
     @test_throws ArgumentError vp_replay(k,pdg,bes,bb;iterations=0)
+end
+
+@testset "BES input replacement" begin
+    input=read_csv(joinpath(root,"data/besii/input.csv"))
+    ec=vec(read_csv(joinpath(root,"data/vp/Ebes.csv")))
+    ep=vec(read_csv(joinpath(root,"data/vp/Epdg.csv")))
+    eb=vec(read_csv(joinpath(root,"data/vp/Ebb.csv")))
+    @test length(ec)==77
+    @test ec==input[:,1]
+    @test (first(ec),last(ec))==(3.7,5.0)
+    @test all(diff(ec).>0)
+    @test input[end,2:3]==[3.47,.32]
+    @test abs(input[end,4]-.29)<.005
+    k=VPKernel(ep,ec,eb)
+    @test k.grid[last(k.ibes)+1]==5.05
+    @test all(diff(k.grid).>0)
+    z=read_csv(joinpath(root,"data/besii/shared_nuisance.csv"))
+    bes=load_draws(joinpath(root,"data/vp/Rbes.f64"),77)
+    @test maximum(abs.(bes.-(input[:,2].+input[:,3]*transpose(z[:,1]).+input[:,4]*transpose(z[:,2]))))<1e-13
+    pdg=load_draws(joinpath(root,"data/vp/Rpdg.f64"),length(ep))[:,1:1]
+    bb=load_draws(joinpath(root,"data/vp/Rbb.f64"),length(eb))[:,1:1]
+    @test maximum(abs.(vp_replay(k,pdg,bes[:,1:1],bb)[:,1].-vp_literal(k,pdg[:,1],bes[:,1],bb[:,1])[:,3]))<1e-12
 end
