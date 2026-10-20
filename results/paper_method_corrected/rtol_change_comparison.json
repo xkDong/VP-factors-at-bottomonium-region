@@ -1,0 +1,10 @@
+{
+  "ISR_correction": 0.0002836669237387124,
+  "ISR_total_error": 8.015191106137964e-06,
+  "VP_factor": 5.687404246890182e-06,
+  "VP_total_error": 1.2309684241254646e-07,
+  "sigma_dressed_nb": 7.167084142423175e-05,
+  "sigma_dressed_error_nb": 5.2957354782015575e-06,
+  "sigma_Born_nb": 6.673082027530697e-05,
+  "sigma_Born_error_nb": 4.927090279181756e-06
+}

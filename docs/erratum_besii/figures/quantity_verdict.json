@@ -1,0 +1,1 @@
+{"schema_id": "quantity_verdict_v1", "schema_version": 1, "quantities": ["observed", "observed_error", "dressed", "dressed_error", "Born", "Born_error", "ISR", "ISR_error", "VP", "VP_error"], "verdict": "pass"}

@@ -1,5 +1,7 @@
 # BES 数据替换工作计划与约定
 
+> Historical input-only BES replacement, superseded by the current erratum results in `results/paper_method_corrected/`. See the repository README for current figures and data.
+
 基线为 `paper-reproduction` 的 `5cabb61`。目标是在原数值实现下，将内部粲区输入换成 CPC 原文引用的 BES 包容 R 测量，重新运行 ISR、VP、dressed/Born 截面及抽样误差。
 
 1. 使用 PDG 数据表中的 BES 2002 测量覆盖 $3.70$–$4.80\,\mathrm{GeV}$，用 BES 2000 的 $5.00\,\mathrm{GeV}$ 端点补齐。重复的 $4.60\,\mathrm{GeV}$ 点使用 2002 年结果。共 $77$ 点。

@@ -1,0 +1,9 @@
+{
+  "findings": [],
+  "crops": [
+    "/private/tmp/rtol4-crops/fig01_panel_01.png",
+    "/private/tmp/rtol4-crops/fig02_panel_01.png",
+    "/private/tmp/rtol4-crops/fig03_panel_01.png"
+  ]
+}
+figure_qa: geometric check clean on 3 figure(s); run the perceptual pass on the crops

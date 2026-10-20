@@ -1,0 +1,31 @@
+VP_residual = 1.6209256159527285e-13
+numerical_base = "805455f"
+background4_max_VP_abs = 1.0701942909641105e-7
+resolution_budget_abs = 5.202818404992371e-7
+Born_max_abs_change_percent = 4.847659495178269
+ISR_order48_96_max_weight_difference = 1.1102230246251565e-15
+negative_estimates_retained = 773
+pQCD_start_GeV = 5.05
+central_definition = "Means of 9999 paired random samples; first fixed bottom sample excluded. Fixed-input checks use background ensemble mean and published BES central values."
+dense_points = 1077
+completed = true
+tail400_max_VP_abs = 3.403039605665015e-8
+dressed_max_abs_change_percent = 4.871990935280834
+ISR_forward_residual_nb = 4.440892098500626e-16
+scope = "numerical-updates kernels + published BES input; total input-error ensemble means, not nominal values"
+VP_max_abs_change_percent = 0.04798690579818077
+tolerance_change_abs = 7.083222897108499e-14
+uncertainty_scope = "Propagated historical input-error model; excludes smoothing/model and missing parameter uncertainties; no claim of a complete statistical/systematic split"
+ISR_max_abs_change_percent = 6.184027654231839
+samples = 9999
+VP_iterations = 7
+grid30_max_VP_abs = 2.712014512962213e-7
+tailfine_max_VP_abs = 1.0803056404995459e-7
+
+[hashes]
+"scripts/run_besii_corrected.jl" = "5544153a5c6720c20f7b931674a9efa1b507014778b88df4be1c5568d7859c58"
+"data/total_draws.f64" = "de42bcc3b0183ca20c3de2e0e9380baa00e6d4ca828083565e805ee66e470dfe"
+"data/besii/input.csv" = "06e71c393126fc7e61be3735a927206b3291e4db2a5c9af6203c0e63e1bb4d87"
+"data/vp/Rbes.f64" = "fd0a007e5fc39853fa64dac992d8945b3e40b0298ceae0cf765c10e8dfd3140b"
+"src/updated.jl" = "933f506b4e28f5a59411d073db9badd687c8ce0624a9fe0f1c15961c760a9c16"
+"data/vp/Rpdg.f64" = "2529ea6d4fd6d35bac6cdc304393d1e9614b389c5d153d8de3d3382c752f4146"

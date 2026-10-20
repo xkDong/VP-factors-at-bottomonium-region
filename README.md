@@ -1,74 +1,75 @@
-# Bottomonium ISR and VP factors — BES input consistency branch
+# ISR and VP factors in the bottomonium region
 
-This branch, `besii-paper-consistency`, replaces the internal charm-region inputs with published **BES inclusive R measurements**, as cited in [our CPC paper](https://arxiv.org/abs/2002.09838). It starts from `paper-reproduction` (`5cabb61`) and keeps the historical numerical algorithm. The separate `numerical-updates` branch remains unchanged.
+Corrected calculation accompanying the erratum to [X.-K. Dong et al., Chinese Physics C **44**, 083001 (2020)](https://doi.org/10.1088/1674-1137/44/8/083001). The current results use published BES inclusive R measurements and the corrected numerical methods described below.
 
-**This is an input-only revision, not a complete numerical correction or a finalized erratum.** Known historical issues (the hadronic imaginary term, pion unit conversion, finite iteration counts and different smoothing starts) remain deliberately visible; see [scope and assumptions](docs/besii_work_plan.md).
+[Erratum PDF](docs/erratum_besii/main.pdf) · [Complete numerical table](results/paper_method_corrected/results.csv) · [Data and uncertainty guide](results/paper_method_corrected/README.md)
 
-## Results
+## Cross sections
 
-The current results are in [`results/besii/results.csv`](results/besii/results.csv). They cover all 209 experimental bottomonium energies and include ISR and VP factors, dressed and Born cross sections, and propagated errors. Cross sections are formed from **unsmoothed experimental samples**, with paired ISR and VP factors. Older `results/historical` and `results/vp` files are historical references, not this branch's new results.
+![Observed, dressed and Born cross sections](docs/erratum_besii/figures/cross_sections.png)
 
-The full rerun used 10,000 samples per ensemble. All 35 Julia tests passed, with primary-source input checks and covariance validation.
+[Cross-section data (CSV)](results/paper_method_corrected/cross_sections.csv) · [Vector figure (PDF)](docs/erratum_besii/figures/cross_sections.pdf)
 
-| Quantity | Change from `paper-reproduction` |
+The 209 observed points are the unsmoothed experimental inputs. Dressed and Born cross sections are calculated from paired experimental samples and correction factors; error bars show total propagated input uncertainties. The inset enlarges 10.55–11.22 GeV.
+
+## ISR correction factors
+
+![ISR correction factors](docs/erratum_besii/figures/isr.png)
+
+[ISR data (CSV)](results/paper_method_corrected/isr.csv) · [Vector figure (PDF)](docs/erratum_besii/figures/isr.pdf)
+
+The plotted correction is $1/(1+\delta)$. It converts the observed cross section to the dressed cross section. ISR uses the bottomonium input and does not depend on the BES charm-region data.
+
+## VP factors
+
+![VP factors with total uncertainty band](docs/erratum_besii/figures/vp.png)
+
+[VP at measured energies (CSV)](results/paper_method_corrected/vp.csv) · [Plotted VP curve and band (CSV)](results/paper_method_corrected/vp_dense.csv) · [Vector figure (PDF)](docs/erratum_besii/figures/vp.pdf)
+
+The plotted factor is $F_{\mathrm{VP}}=1/|1-\Pi|^2$; the band represents the total fitted input uncertainty. Born cross sections are obtained by dividing the dressed cross sections by this factor, sample by sample. The displayed curve extends down to 10.4 GeV and uses the calculated refined grid without additional smoothing.
+
+## Corrections and methods
+
+- Replace the unpublished charm-region input by published BES inclusive R measurements: 76 points from 3.70–4.80 GeV from [PRL **88**, 101802 (2002)](https://doi.org/10.1103/PhysRevLett.88.101802), plus the 5.00 GeV point from [PRL **84**, 594 (2000)](https://doi.org/10.1103/PhysRevLett.84.594). Both measurements used the BESII detector. At 4.60 GeV the 2002 measurement is used. See the [input table](data/besii/input.csv) and [archived PDG compilation](data/besii/pdg2020-R.dat).
+- Restore the missing $1/\alpha(0)$ in the hadronic VP imaginary part and correct the two-pion conversion constant to $389379000\,\mathrm{nb}\,\mathrm{GeV}^{2}$.
+- Improve the principal-value integration and remove the inconsistent second smoothing before the VP calculation. The pQCD grid resumes at 5.05 GeV after the BES input.
+- Use robust local-linear LOWESS with span 0.045, starting at 10.6659 GeV, with three bisquare reweighting passes. Both ISR and VP iterations stop when the maximum relative correction-factor change is below $10^{-4}$ (0.01%).
+- Use 10,000 Gaussian input samples per ensemble, seed 20261020, and unbinned Gaussian maximum-likelihood estimates for central values and widths. Samples are not clipped. Some ISR distributions depart from Gaussian shape; per-point diagnostics are supplied.
+
+Statistical, systematic and unresolved low-energy background errors are propagated separately. The last component is **not** classified as purely statistical or systematic. Total errors come from simultaneous variation, rather than an imposed quadrature sum of separate ensembles. The [error-component table](results/paper_method_corrected/error_components.csv) and [data guide](results/paper_method_corrected/README.md) describe the adopted correlations and covariance files. These errors do not include additional model or smoothing uncertainties. No resonance fit was repeated.
+
+## Reproduce
+
+The numerical calculation requires only Julia standard libraries (tested with Julia 1.12.6). All required inputs are bundled; MATLAB, the thesis and the external drive are not required.
+
+```sh
+julia --project=. test/runtests.jl
+julia --project=. scripts/run_paper_method_corrected.jl
+julia --project=. scripts/check_paper_resolution.jl
+python3 scripts/export_erratum.py
+```
+
+The production calculation generates four 10,000-sample ensembles and can take substantial time. To regenerate the three figures, install NumPy, Matplotlib and Pillow, then run:
+
+```sh
+python3 docs/erratum_besii/revision/generate_revision.py
+cd docs/erratum_besii
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+The TeX directory is self-contained. See [production validation](results/paper_method_corrected/validation.toml), [resolution checks](results/paper_method_corrected/resolution.toml), and [independent integration checks](results/besii_corrected/independent_methods.toml). The current run passed 64 Julia tests; ISR required at most 17 iterations and VP 3. `SHA256SUMS` records the distributed files; rerunning numerical calculations may change their hashes.
+
+## Repository layout and historical results
+
+| Location | Purpose |
 | --- | --- |
-| ISR correction and dressed cross section | Unchanged |
-| VP mean | Decreases by 0.001829%–0.001893% |
-| VP propagated uncertainty | Increases by 5.318%–6.688% |
-| Born cross-section mean | Increases by 0.001772%–0.001922% |
+| `src/`, `scripts/`, `test/` | Julia implementation, runners, exports and tests |
+| `data/` | Bundled experimental and historical inputs |
+| `results/paper_method_corrected/` | **Current erratum results**, uncertainty components and diagnostics |
+| `docs/erratum_besii/` | Current manuscript, self-contained figure sources and PDF |
+| `results/besii/` | Historical input-only BES replacement; superseded |
+| `results/besii_corrected/` | Intermediate numerical checks before the final robust smoothing and uncertainty treatment |
+| Other result directories and older audit documents | Historical reproduction and provenance; not the current erratum |
 
-These changes isolate the input replacement while retaining the historical algorithm and uncertainty model. The error increase is a **relative change in the standard deviation**, not a percentage-point increase in the VP factor.
-
-### Download the data
-
-[Complete table](results/besii/results.csv) · [ISR factors](results/besii/isr.csv) · [VP factors](results/besii/vp.csv) · [Cross sections](results/besii/cross_sections.csv) · [Old/new comparison](results/besii/comparison.csv)
-
-See the [data guide](results/besii/README.md) for units, column definitions, covariance matrices and how to use the paired results. The data guide also distinguishes propagated experimental errors from Monte Carlo errors. All result tables contain 209 energies; the [published BES input table](data/besii/input.csv) contains 77 charm-region energies.
-
-### Factors and cross sections
-
-![BES replacement results](results/besii/figures/overview.png)
-
-The bands show propagated total uncertainties under the historical error model. The old and new VP/Born curves nearly overlap; the smaller changes are shown separately below.
-
-![Relative changes after the BES input replacement](results/besii/figures/relative_changes.png)
-
-### Charm-region inputs
-
-![Historical and published BES input comparison](results/besii/figures/input_comparison.png)
-
-[Comparison with the paper-reproduction baseline](results/besii/comparison.csv) · [Input comparison](results/besii/figures/input_comparison.png) · [Validation report](results/besii/validation.toml) · [Interpretation](docs/besii_results.md)
-
-## Input selection
-
-- 76 points from 3.70 to 4.80 GeV: J. Z. Bai et al. (BES), [PRL 88, 101802 (2002)](https://doi.org/10.1103/PhysRevLett.88.101802).
-- The 5.00 GeV endpoint: J. Z. Bai et al. (BES), [PRL 84, 594 (2000)](https://doi.org/10.1103/PhysRevLett.84.594).
-- At the duplicate 4.60 GeV energy, use the 2002 measurement. No unprescribed average is taken.
-- Values and errors come from the archived [PDG table](data/besii/pdg2020-R.dat); the original paper sources and input hashes are bundled in `data/besii/`.
-- The measured inclusive R is used directly, without adding a light-quark constant or separate charm channels. The pQCD grid resumes at 5.05 GeV.
-
-Both publications used the BESII detector; their collaboration name is BES. Each charm uncertainty component uses a common Gaussian nuisance across energies, following the historical implementation. Its two random streams are recovered from the old inputs and reused for a paired comparison. This is a reproduction assumption, not the experimental covariance matrix. No internal charm measurements enter the revised production calculation; the old inputs are retained under `reference/legacy_charm/` only for comparison.
-
-## Run
-
-Only Julia standard libraries are required for the calculation. Tested with Julia 1.12.6.
-
-```sh
-julia --project=. --threads=4 test/runtests.jl
-julia --project=. --threads=4 scripts/reproduce_vp.jl
-python3 scripts/export_besii_tables.py
-```
-
-The second command recomputes both 10,000-sample ISR ensembles and the old/new VP ensembles, writes cross sections and covariance matrices, and checks the historical replay and direct-integration reference. It does not need the external drive, desktop archive, thesis, or MATLAB.
-
-To regenerate input arrays from the bundled central values and shared random streams:
-
-```sh
-julia --project=. scripts/rebuild_besii_inputs.jl
-```
-
-For figures, install NumPy and Matplotlib and run `python3 scripts/plot_besii_results.py`. For the original historical VP replay use `scripts/reproduce_vp_legacy.jl`.
-
-## Output conventions
-
-ISR central values use the statistical ensemble mean and errors use the total ensemble standard deviation, matching the historical convention. VP and cross-section summaries use all 10,000 paired total samples. The first background sample is random and is **not** labeled a nominal prediction. Covariances retain shared backgrounds and the dependence between correction factors and experimental inputs. Reported errors do not include unquantified numerical/model systematics. Correlation assumptions and numerical sensitivity checks are documented separately.
+The `paper-reproduction` branch preserves the published-result replay; `numerical-updates` preserves the earlier numerical audit. This branch combines the published BES input with the corrected calculation and the final method choices used for the erratum.

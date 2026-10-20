@@ -1,5 +1,7 @@
 # Published BES input: reader data
 
+> Historical input-only BES replacement, superseded by the current erratum results in `results/paper_method_corrected/`. See the repository README for current figures and data.
+
 These files contain the results of the `besii-paper-consistency` branch. They use published BES inclusive R measurements in the charm region and retain the historical numerical algorithm. The reference calculation is `paper-reproduction` at commit `5cabb61`.
 
 ## Ready-to-use tables

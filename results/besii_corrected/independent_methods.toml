@@ -1,0 +1,4 @@
+isr_independent_forward_abs_nb = 1.2989609388114332e-14
+vp_independent_Pi_max_abs = 1.2479005663209378e-14
+isr_dense_triangular_abs_nb = 2.220446049250313e-16
+completed = true

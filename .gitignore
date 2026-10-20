@@ -3,3 +3,16 @@
 __pycache__/
 
 .runs/
+
+# Local research archive and superseded manuscript drafts
+/WeiminSong_PhD_thesis.pdf
+/notes/
+/results/paper_method_rtol_1e-3_archive/
+/docs/erratum_besii/*.aux
+/docs/erratum_besii/*.out
+/docs/erratum_besii/*.synctex.gz
+/docs/erratum_besii/tracked.*
+/docs/erratum_besii/build-*.txt
+/docs/erratum_besii/revision/previous.*
+/docs/erratum_besii/revision/*.txt
+/docs/erratum_besii/revision/changes.diff

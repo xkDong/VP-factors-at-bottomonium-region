@@ -1,0 +1,84 @@
+{
+  "scope": "Corrected kernels plus robust LOWESS, 1e-4 relative ISR/VP iteration stopping, 10000 untruncated Gaussian input toys, and unbinned Gaussian MLE summaries. Statistical, systematic and unresolved low-background components separately propagated. VP display samples refinement20 every fourth point.",
+  "display_acceptance": {
+    "plotted_quantities": [
+      "observed",
+      "observed_error",
+      "dressed",
+      "dressed_error",
+      "Born",
+      "Born_error",
+      "ISR",
+      "ISR_error",
+      "VP",
+      "VP_error"
+    ],
+    "verdict_bindings": [
+      {
+        "quantity": "observed",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "observed_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "dressed",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "dressed_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "Born",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "Born_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "ISR",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "ISR_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "VP",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      },
+      {
+        "quantity": "VP_error",
+        "verdict_path": "quantity_verdict.json",
+        "verdict_sha256": "66b730f96d131b59684ed0c682c32371d3717b5b9a37c60669f3a6639e3e3aad"
+      }
+    ],
+    "overview_figure": {
+      "path": "overview.png",
+      "archived": true
+    }
+  },
+  "style": "../revision/figure_style.json",
+  "script": "../revision/generate_revision.py",
+  "sources": {
+    "support/paper_method_results.csv": "8920ce2d5e4fa09c0bd88c22851aa0562176ebd6f3b83ca71caec97e4986fd3a",
+    "support/observed_input.csv": "eaf18273f22a2c9f347d7bf5b87bafad471c2912b5c0e162bc6f765e15939e5d",
+    "support/paper_method_validation.toml": "b637f18d898240c932643242b79bfe3cf9723bc5186421b7f748465042144f44",
+    "support/paper_method_vp_dense.csv": "ada5ecb5b84f8514374cef860f72ce80f1c5180e8be8a53869aa076d8c05c50d",
+    "support/paper_method_resolution.toml": "38e31a2503e36be8e684754d4842ae3e418dea9cddc17dbe2f34a9da1306a8af",
+    "revision/generate_revision.py": "93dbc5174bac00ac0883b8ae1949a70a0f4aaa5f3cb2b62e9be7e718b17d6b76",
+    "revision/figure_style.json": "ed10cf9b861a8418c639c35f72385b6786f73bf9790acbfe1c22f1140b273508"
+  }
+}

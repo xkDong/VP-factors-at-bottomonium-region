@@ -1,4 +1,4 @@
-name: Verify ISR reproduction
+name: Verify erratum calculation
 on: [push, pull_request]
 jobs:
   verify:
@@ -8,6 +8,7 @@ jobs:
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1.12'
+      - run: sha256sum -c SHA256SUMS
       - run: julia --project=. test/runtests.jl
-      - run: julia --project=. --threads=2 scripts/reproduce.jl historical
-      - run: julia --project=. --threads=2 scripts/reproduce_vp.jl
+      - run: python3 scripts/export_erratum.py
+      - run: git diff --exit-code -- results/paper_method_corrected docs/erratum_besii/support

@@ -1,0 +1,22 @@
+{
+  "isr": {
+    "max_abs_skewness": 0.7358120951265033,
+    "max_abs_excess_kurtosis": 1.1369491011587831,
+    "near_constant_points_excluded": 1
+  },
+  "vp": {
+    "max_abs_skewness": 0.04561570685317308,
+    "max_abs_excess_kurtosis": 0.06571087517774199,
+    "near_constant_points_excluded": 0
+  },
+  "sigma_dressed": {
+    "max_abs_skewness": 0.2168781460670914,
+    "max_abs_excess_kurtosis": 0.24449116816973993,
+    "near_constant_points_excluded": 0
+  },
+  "sigma_born": {
+    "max_abs_skewness": 0.21724992856665837,
+    "max_abs_excess_kurtosis": 0.2448717127453235,
+    "near_constant_points_excluded": 0
+  }
+}

@@ -1,5 +1,7 @@
 # BES input replacement: results and limitations
 
+> Historical input-only BES replacement, superseded by the current erratum results in `results/paper_method_corrected/`. See the repository README for current figures and data.
+
 All $209$ bottomonium experimental energies were recomputed with the historical algorithm and the published BES charm-region inputs. The calculation used two ISR ensembles of $10000$ samples and paired old/new VP ensembles of $10000$ samples each. The comparison baseline is `paper-reproduction` commit `5cabb61`.
 
 | Quantity | Change relative to the historical input |

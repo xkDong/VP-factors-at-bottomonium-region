@@ -1,0 +1,10 @@
+nominal_ISR_tight_iterations = 28
+tail400 = 3.403024240178354e-8
+tailfine = 1.0803007466364534e-7
+nominal_ISR_tolerance_abs = 2.5933686486068197e-5
+nominal_VP_tolerance_abs = 5.4405743910024285e-8
+grid30 = 2.712012492356308e-7
+background4 = 1.0702050756705717e-7
+resolution_sum = 5.202820738681169e-7
+completed = true
+nominal_ISR_1e4_iterations = 17

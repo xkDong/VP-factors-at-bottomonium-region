@@ -85,3 +85,7 @@ end
     bb=load_draws(joinpath(root,"data/vp/Rbb.f64"),length(eb))[:,1:1]
     @test maximum(abs.(vp_replay(k,pdg,bes[:,1:1],bb)[:,1].-vp_literal(k,pdg[:,1],bes[:,1],bb[:,1])[:,3]))<1e-12
 end
+
+include("updated.jl")
+
+include("paper_method.jl")
