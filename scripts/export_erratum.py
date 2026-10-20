@@ -1,7 +1,7 @@
 """Export the current erratum tables and synchronize its self-contained plot inputs."""
 from pathlib import Path
 import csv
-import math
+from decimal import Decimal, localcontext
 import shutil
 
 root = Path(__file__).resolve().parents[1]
@@ -25,7 +25,11 @@ assert len(rows) == len(observed) == 209
 for row, obs in zip(rows, observed):
     assert abs(float(row["energy_GeV"]) - float(obs["energy_GeV"])) < 1e-12
     row["sigma_observed_nb"] = obs["sigma_nb"]
-    row["sigma_observed_error_nb"] = math.sqrt(sum(float(v)**2 for k, v in obs.items() if k not in ("energy_GeV", "sigma_nb")))
+    # Decimal arithmetic keeps this derived column identical across Python versions/platforms.
+    with localcontext() as context:
+        context.prec = 50
+        variance = sum(Decimal(v)**2 for k, v in obs.items() if k not in ("energy_GeV", "sigma_nb"))
+        row["sigma_observed_error_nb"] = format(variance.sqrt(), ".16g")
 write("isr.csv", rows, ["energy_GeV", "ISR_correction", "ISR_total_error"])
 write("vp.csv", rows, ["energy_GeV", "VP_factor", "VP_total_error"])
 write("cross_sections.csv", rows, ["energy_GeV", "sigma_observed_nb", "sigma_observed_error_nb", "sigma_dressed_nb", "sigma_dressed_error_nb", "sigma_Born_nb", "sigma_Born_error_nb"])
